@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="hexo github pages 首页不展示，出现代码怎么办1.现象描述：然后打开页面显示的是： 1 &lt;%- partial(‘_partial&#x2F;head’) %&gt; &lt;%- partial(‘_partial&#x2F;header’) %&gt; &lt;%- body %&gt; &lt;% if (theme.sidebar &amp;&amp; theme.sidebar !&#x3D;&#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用heox d 部署后 打开页面显示代码原因">
+<meta property="og:url" content="http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/index.html">
+<meta property="og:site_name" content="xieyingpengblogs">
+<meta property="og:description" content="hexo github pages 首页不展示，出现代码怎么办1.现象描述：然后打开页面显示的是： 1 &lt;%- partial(‘_partial&#x2F;head’) %&gt; &lt;%- partial(‘_partial&#x2F;header’) %&gt; &lt;%- body %&gt; &lt;% if (theme.sidebar &amp;&amp; theme.sidebar !&#x3D;&#x3D;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202102/2171691-20210220145615817-322894906.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202102/2171691-20210220145619938-1697018254.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202102/2171691-20210220145637298-1016990852.png">
+<meta property="article:published_time" content="2021-02-20T07:01:12.000Z">
+<meta property="article:modified_time" content="2021-02-20T07:02:12.468Z">
+<meta property="article:author" content="лӦ��">
+<meta property="article:tag" content="java html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2020.cnblogs.com/blog/2171691/202102/2171691-20210220145615817-322894906.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>使用heox d 部署后 打开页面显示代码原因</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">xieyingpengblogs</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/xieyingpeng">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&text=使用heox d 部署后 打开页面显示代码原因"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&title=使用heox d 部署后 打开页面显示代码原因"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&is_video=false&description=使用heox d 部署后 打开页面显示代码原因"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=使用heox d 部署后 打开页面显示代码原因&body=Check out this article: http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&title=使用heox d 部署后 打开页面显示代码原因"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&title=使用heox d 部署后 打开页面显示代码原因"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&title=使用heox d 部署后 打开页面显示代码原因"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&title=使用heox d 部署后 打开页面显示代码原因"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&name=使用heox d 部署后 打开页面显示代码原因&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-github-pages-%E9%A6%96%E9%A1%B5%E4%B8%8D%E5%B1%95%E7%A4%BA%EF%BC%8C%E5%87%BA%E7%8E%B0%E4%BB%A3%E7%A0%81%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-number">1.</span> <span class="toc-text">hexo github pages 首页不展示，出现代码怎么办</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0%EF%BC%9A"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.现象描述：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8E%9F%E5%9B%A0%EF%BC%9A"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.原因：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%881%EF%BC%89npm-install-hexo-renderer-ejs-%E2%80%93save"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">（1）npm install hexo-renderer-ejs –save</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%882%EF%BC%89npm-install-hexo-renderer-stylus-%E2%80%93save"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">（2）npm install hexo-renderer-stylus –save</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%883%EF%BC%89npm-install-hexo-renderer-marked-%E2%80%93save"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">（3）npm install hexo-renderer-marked –save</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%B8%AA%E4%BA%BA%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.个人联系方式：</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        使用heox d 部署后 打开页面显示代码原因
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">xieyingpengblogs</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2021-02-20T07:01:12.000Z" itemprop="datePublished">2021-02-20</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="hexo-github-pages-首页不展示，出现代码怎么办"><a href="#hexo-github-pages-首页不展示，出现代码怎么办" class="headerlink" title="hexo github pages 首页不展示，出现代码怎么办"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Xieyingpeng/p/14421226.html">hexo github pages 首页不展示，出现代码怎么办</a></h1><h3 id="1-现象描述："><a href="#1-现象描述：" class="headerlink" title="1.现象描述："></a>1.现象描述：</h3><p>然后打开页面显示的是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>&lt;%- partial(‘_partial/head’) %&gt; &lt;%- partial(‘_partial/header’) %&gt; &lt;%- body %&gt; &lt;% if (theme.sidebar &amp;&amp; theme.sidebar !== ‘bottom’){</p>
+<p> %&gt; &lt;%- partial(‘_partial/sidebar’) %&gt; &lt;% } %&gt; &lt;%- partial(‘_partial/footer’) %&gt; &lt;%- partial(‘_partial/mobile-nav’) %</p>
+<blockquote>
+<p>&lt;%- partial(‘_partial/after-footer’) %&gt;</p>
+</blockquote>
+<h3 id="2-原因："><a href="#2-原因：" class="headerlink" title="2.原因："></a>2.原因：</h3><p>Hexo无法解析模板文件</p>
+<ul>
+<li>解决方方法：<br>使用以下的命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>npm install hexo-renderer-ejs –save<br>npm install hexo-renderer-stylus –save<br>npm install hexo-renderer-marked –save</p>
+<h4 id="（1）npm-install-hexo-renderer-ejs-–save"><a href="#（1）npm-install-hexo-renderer-ejs-–save" class="headerlink" title="（1）npm install hexo-renderer-ejs –save"></a>（1）npm install hexo-renderer-ejs –save</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202102/2171691-20210220145615817-322894906.png" alt="img"></p>
+<h4 id="（2）npm-install-hexo-renderer-stylus-–save"><a href="#（2）npm-install-hexo-renderer-stylus-–save" class="headerlink" title="（2）npm install hexo-renderer-stylus –save"></a>（2）npm install hexo-renderer-stylus –save</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202102/2171691-20210220145619938-1697018254.png" alt="img"></p>
+<h4 id="（3）npm-install-hexo-renderer-marked-–save"><a href="#（3）npm-install-hexo-renderer-marked-–save" class="headerlink" title="（3）npm install hexo-renderer-marked –save"></a>（3）npm install hexo-renderer-marked –save</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202102/2171691-20210220145637298-1016990852.png" alt="img"></p>
+<h3 id="3-个人联系方式："><a href="#3-个人联系方式：" class="headerlink" title="3.个人联系方式："></a>3.个人联系方式：</h3><p>qq：2061302791</p>
+<p>微信：xie2061302791</p>
+<p>电话：15284524485</p>
+<p>个人网站：<a target="_blank" rel="noopener" href="https://xieyingpeng.mysxl.cn/">https://xieyingpeng.mysxl.cn/</a></p>
+<p>Github：<a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/">https://github.com/xieyingpeng/</a></p>
+<p>博客园：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Xieyingpengz">https://www.cnblogs.com/Xieyingpengz</a></p>
+<p>知乎：<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nan-qiao-12-73">https://www.zhihu.com/people/nan-qiao-12-73</a></p>
+<p>gitee：<a target="_blank" rel="noopener" href="https://gitee.com/xie-yingpeng/project-1.git">https://gitee.com/xie-yingpeng/project-1.git</a></p>
+<p>bilibili：<a target="_blank" rel="noopener" href="https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798">https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798</a></p>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/xieyingpeng">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-github-pages-%E9%A6%96%E9%A1%B5%E4%B8%8D%E5%B1%95%E7%A4%BA%EF%BC%8C%E5%87%BA%E7%8E%B0%E4%BB%A3%E7%A0%81%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-number">1.</span> <span class="toc-text">hexo github pages 首页不展示，出现代码怎么办</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%8E%B0%E8%B1%A1%E6%8F%8F%E8%BF%B0%EF%BC%9A"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.现象描述：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8E%9F%E5%9B%A0%EF%BC%9A"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.原因：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%881%EF%BC%89npm-install-hexo-renderer-ejs-%E2%80%93save"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">（1）npm install hexo-renderer-ejs –save</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%882%EF%BC%89npm-install-hexo-renderer-stylus-%E2%80%93save"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">（2）npm install hexo-renderer-stylus –save</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%883%EF%BC%89npm-install-hexo-renderer-marked-%E2%80%93save"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">（3）npm install hexo-renderer-marked –save</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%B8%AA%E4%BA%BA%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.个人联系方式：</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&text=使用heox d 部署后 打开页面显示代码原因"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&title=使用heox d 部署后 打开页面显示代码原因"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&is_video=false&description=使用heox d 部署后 打开页面显示代码原因"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=使用heox d 部署后 打开页面显示代码原因&body=Check out this article: http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&title=使用heox d 部署后 打开页面显示代码原因"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&title=使用heox d 部署后 打开页面显示代码原因"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&title=使用heox d 部署后 打开页面显示代码原因"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&title=使用heox d 部署后 打开页面显示代码原因"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/02/20/%E4%BD%BF%E7%94%A8heox-d-%E9%83%A8%E7%BD%B2%E5%90%8E-%E6%89%93%E5%BC%80%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%9B%A0/&name=使用heox d 部署后 打开页面显示代码原因&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2021 лӦ��
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/xieyingpeng">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>
