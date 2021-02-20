@@ -1,23 +1,324 @@
 <!DOCTYPE html>
-<html<%= config.language ? " lang=" + config.language.substring(0, 2) : ""%>>
-<%- partial('_partial/head') %>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="一，关于Mysql的介绍1、mysql 的诞生 MySQL最初的开发者的意图是用mSQL和他们自己的快速低级例程(ISAM)去连接表格。经过一些测试后，开发者得出结论：mSQL并没有他们需要的那么快和灵活。这导致了一个使用几乎和mSQL一样的API接口的用于他们的数据库的新的SQL接口的产生，这样，这个API被设计成允许为用于mSQL而写的第三方代码更容易移植到MySQL。 MySQL的海豚标志的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何安装数据库并配置环境">
+<meta property="og:url" content="http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:site_name" content="xieyingpengblogs">
+<meta property="og:description" content="一，关于Mysql的介绍1、mysql 的诞生 MySQL最初的开发者的意图是用mSQL和他们自己的快速低级例程(ISAM)去连接表格。经过一些测试后，开发者得出结论：mSQL并没有他们需要的那么快和灵活。这导致了一个使用几乎和mSQL一样的API接口的用于他们的数据库的新的SQL接口的产生，这样，这个API被设计成允许为用于mSQL而写的第三方代码更容易移植到MySQL。 MySQL的海豚标志的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184641912-2066692014.jpg">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184647637-808157085.jpg">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184706543-815931124.jpg">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184758568-401885028.jpg">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184821763-303356596.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184837228-1898702012.jpg">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184846018-1042337977.jpg">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184855688-1473745913.jpg">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184901995-894104572.jpg">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184909298-2023190885.jpg">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130185739798-466003946.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130185748758-807718713.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130185806214-987899419.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130185958732-2021007873.png">
+<meta property="article:published_time" content="2021-02-20T06:18:47.000Z">
+<meta property="article:modified_time" content="2021-02-20T06:19:54.742Z">
+<meta property="article:author" content="лӦ��">
+<meta property="article:tag" content="java html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184641912-2066692014.jpg">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>如何安装数据库并配置环境</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
 <body>
-    <%- partial('_partial/banner') %>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">xieyingpengblogs</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
     <div class="background">
-      <% if (is_post()) { %>
-        <%- partial('_partial/post/actions_desktop') %>
-      <% } %>
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/xieyingpeng">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2021/02/19/%E4%BD%BF%E7%94%A8hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%89/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&text=如何安装数据库并配置环境"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&title=如何安装数据库并配置环境"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&is_video=false&description=如何安装数据库并配置环境"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=如何安装数据库并配置环境&body=Check out this article: http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&title=如何安装数据库并配置环境"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&title=如何安装数据库并配置环境"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&title=如何安装数据库并配置环境"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&title=如何安装数据库并配置环境"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&name=如何安装数据库并配置环境&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%EF%BC%8C%E5%85%B3%E4%BA%8EMysql%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">一，关于Mysql的介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81mysql-%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-number">1.0.1.</span> <span class="toc-text">1、mysql 的诞生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81mysql%E7%9A%84%E5%8F%91%E5%B1%95"><span class="toc-number">1.0.2.</span> <span class="toc-text">2、mysql的发展</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%EF%BC%8C%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">二，安装步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%8C%E9%A6%96%E5%85%88%E9%80%9A%E8%BF%87%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99%EF%BC%9Ahttps-www-mysql-com"><span class="toc-number">2.0.1.</span> <span class="toc-text">1，首先通过官方网站：https:&#x2F;&#x2F;www.mysql.com&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%8C%E8%BF%9B%E5%85%A5%E4%B8%8B%E8%BD%BD%E7%95%8C%E9%9D%A2%EF%BC%8C%E7%82%B9%E5%87%BB%E9%80%89%E6%8B%A9MySQL-Server%E6%9C%8D%E5%8A%A1%E8%BF%9B%E8%A1%8C%E4%B8%8B%E8%BD%BD%E3%80%82"><span class="toc-number">2.0.2.</span> <span class="toc-text">2，进入下载界面，点击选择MySQL Server服务进行下载。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%8C%E9%80%89%E6%8B%A9%E4%B8%80%E8%88%ACmysql%E7%89%88%E6%9C%AC%EF%BC%8C%E9%80%89%E6%8B%A932%E4%BD%8D%E6%88%96%E8%80%8564%E4%BD%8D%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8B%E8%BD%BD%E3%80%8264%E4%BD%8D%E7%9A%84%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F%E5%8F%AF%E4%BB%A5%E5%AE%89%E8%A3%8532%E4%BD%8D%E5%92%8C64%E4%BD%8D%E8%BD%AF%E4%BB%B6%EF%BC%8C32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E5%8F%AA%E8%83%BD%E5%AE%89%E8%A3%8532%E4%BD%8D%E8%BD%AF%E4%BB%B6%EF%BC%8C%E6%9F%A5%E7%9C%8B%E7%94%B5%E8%84%91%E6%98%AF32%E8%BF%98%E6%98%AF64%E4%BD%8D%E5%8F%AF%E4%BB%A5%E5%8F%82%E8%80%83%E4%B8%8B%E9%9D%A2%E9%93%BE%E6%8E%A5%E3%80%82"><span class="toc-number">2.0.3.</span> <span class="toc-text">3，选择一般mysql版本，选择32位或者64位安装包下载。64位的电脑系统可以安装32位和64位软件，32位系统只能安装32位软件，查看电脑是32还是64位可以参考下面链接。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%EF%BC%8C%E6%80%8E%E4%B9%88%E6%9F%A5%E7%9C%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%98%AF32%E4%BD%8D%E8%BF%98%E6%98%AF64%E4%BD%8D"><span class="toc-number">2.0.4.</span> <span class="toc-text">（1），怎么查看操作系统是32位还是64位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%EF%BC%8C%E7%99%BB%E5%BD%95%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%EF%BC%8C%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%97%B6%E5%80%99%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E5%8F%AF%E4%BB%A5%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E7%AD%89%EF%BC%8C%E8%BF%99%E6%A0%B7%E6%96%B9%E4%BE%BF%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9B%B4%E6%96%B0%E5%8F%91%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5%EF%BC%8C%E4%B9%9F%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%B7%B3%E8%BF%87%E7%99%BB%E5%BD%95%EF%BC%8C%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BD%BD%E3%80%82"><span class="toc-number">2.0.5.</span> <span class="toc-text">4，登录用户信息，下载的时候系统提示可以输入用户名等，这样方便进行数据库更新发邮件通知，也可以直接跳过登录，直接下载。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%EF%BC%8C%E5%AE%89%E8%A3%85%E7%89%88%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%8C%E7%9B%B4%E6%8E%A5%E5%8F%8C%E5%87%BB%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%E4%B8%80%E8%B7%AF%E4%B8%8B%E4%B8%80%E6%AD%A5%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85%E3%80%82"><span class="toc-number">2.0.6.</span> <span class="toc-text">5，安装版的数据库，直接双击安装程序一路下一步进行安装。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6%EF%BC%8C%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%EF%BC%8C%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E4%BE%8B%EF%BC%8C%E8%BE%93%E5%85%A5root%E5%AF%86%E7%A0%81%E7%AD%89%E3%80%82"><span class="toc-number">2.0.7.</span> <span class="toc-text">6，安装完成后，创建数据库实例，输入root密码等。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E5%90%AF%E5%8A%A8%E6%88%96%E8%80%85%E5%81%9C%E6%AD%A2mysql%E6%9C%8D%E5%8A%A1%E3%80%82"><span class="toc-number">2.0.8.</span> <span class="toc-text">7，使用命令启动或者停止mysql服务。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E7%99%BB%E5%BD%95%E3%80%82%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%EF%BC%8C%E5%9C%A8%E5%BC%80%E5%A7%8B%E5%90%AF%E5%8A%A8%E4%B8%AD%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E6%9C%89%E4%B8%80%E4%B8%AA%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%93%BE%E6%8E%A5%E7%9A%84dos%E5%8A%9F%E8%83%BD%E3%80%82"><span class="toc-number">2.0.9.</span> <span class="toc-text">8，使用命令登录。安装完成后，在开始启动中可以看到有一个使用命令链接的dos功能。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%EF%BC%8C%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">三，配置环境：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%8C%E6%8A%8A%E5%88%9A%E5%88%9A%E4%B8%8B%E8%BD%BD%E5%A5%BD%E7%9A%84%E5%AE%89%E8%A3%85%E5%8C%85%E8%B7%AF%E5%BE%84%E5%A4%8D%E5%88%B6"><span class="toc-number">3.0.1.</span> <span class="toc-text">1，把刚刚下载好的安装包路径复制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%8C%E7%82%B9%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B1%9E%E6%80%A7-gt-%E9%AB%98%E7%BA%A7%E8%AE%BE%E7%BD%AE-gt-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F-gt-%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F-gt-path-gt-%E6%96%B0%E5%BB%BA-gt-%E7%B2%98%E8%B4%B4%E5%88%9A%E5%88%9A%E5%A4%8D%E5%88%B6%E7%9A%84%E8%B7%AF%E5%BE%84"><span class="toc-number">3.0.2.</span> <span class="toc-text">2，点计算机属性-&gt;高级设置-&gt;环境变量-&gt;系统变量-&gt;path-&gt;新建-&gt;粘贴刚刚复制的路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%8Cwin-r-%E7%84%B6%E5%90%8E-%E8%BE%93%E5%85%A5cmd-%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF-%E8%BE%93%E5%85%A5-Mysql-u-root-p-%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%EF%BC%88%E4%BD%A0%E5%AE%89%E8%A3%85%E6%97%B6%E8%87%AA%E5%B7%B1%E8%AE%BE%E7%BD%AE%E7%9A%84%E5%AF%86%E7%A0%81%EF%BC%89-%E5%8D%B3%E5%8F%AF%E6%89%93%E5%BC%80%E6%95%B0%E6%8D%AE%E5%BA%93-%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E6%93%8D%E4%BD%9C-%EF%BC%88%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%87%8C%E9%9D%A2%E6%9C%89%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%9A%84%E8%AF%A6%E7%BB%86-%E4%BB%8B%E7%BB%8D%EF%BC%89"><span class="toc-number">3.0.3.</span> <span class="toc-text">3，win+r 然后 输入cmd 打开终端 输入 Mysql -u root -p 输入密码（你安装时自己设置的密码） 即可打开数据库 进行相应的操作 （我的博客里面有关于数据库基本操作的详细 介绍）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">个人联系方式:</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+      
       <div class="content index width mx-auto px2 my4">
-          <% if (!is_post()) { %>
-            <%- partial('_partial/header') %>
-          <% } %>
-          <%- body %>
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        如何安装数据库并配置环境
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">xieyingpengblogs</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2021-02-20T06:18:47.000Z" itemprop="datePublished">2021-02-20</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="一，关于Mysql的介绍"><a href="#一，关于Mysql的介绍" class="headerlink" title="一，关于Mysql的介绍"></a>一，关于Mysql的介绍</h2><h4 id="1、mysql-的诞生"><a href="#1、mysql-的诞生" class="headerlink" title="1、mysql 的诞生"></a>1、mysql 的诞生</h4><ul>
+<li>MySQL最初的开发者的意图是用mSQL和他们自己的快速低级例程(ISAM)去连接表格。经过一些测试后，开发者得出结论：mSQL并没有他们需要的那么快和灵活。这导致了一个使用几乎和mSQL一样的API接口的用于他们的数据库的新的SQL接口的产生，这样，这个API被设计成允许为用于mSQL而写的第三方代码更容易移植到MySQL。</li>
+<li>MySQL的海豚标志的名字叫“sakila”，它是由MySQL AB的创始人从用户在“海豚命名”的竞赛中建议的大量的名字表中选出的。获胜的名字是由来自非洲斯威士兰的开源软件开发者Ambrose Twebaze提供。根据Ambrose所说，Sakila来自一种叫SiSwati的斯威士兰方言，也是在Ambrose的家乡乌干达附近的坦桑尼亚的Arusha的一个小镇的名字。</li>
+<li>以Monty Widenius 为首带领瑞典MySQL AB团队，就这样mysql 应运而生了。</li>
+</ul>
+<h4 id="2、mysql的发展"><a href="#2、mysql的发展" class="headerlink" title="2、mysql的发展"></a>2、mysql的发展</h4><ul>
+<li>目前MySQL是一个小型关系型数据库管理系统。在2008年1月16号被Sun公司以大约10亿美元收购MySQL AB，其中8亿美元现金收购MySQL AB的全部股权，另外的2亿美元作为期权。</li>
+<li>对于Sun来说，收购MySQL有助于该公司更好地为开放源代码网络应用平台LAMP提供支持。LAMP是Linux操作系统、Apache网络服务器、MySQL数据库和PHP/Perl编程语言的首字母缩写。这一交易预计将于2008年第三季度或第四季度完成，如何获得足够的现金，对于Sun来说将是第一要务。Sun首席执行官乔纳森·舒瓦茨(Jonathan Schwartz)表示，在交易完成之前，该公司就将开始为MySQL客户提供支持服务。</li>
+<li>而在2009年4月20日甲骨文以74亿美元收购Sun，以现金方式每股9.5美元，超出Sun公司上周五股市收市价的42%。MySQL也自然到了Oracle下。</li>
+</ul>
+<p>这是一个时代的结束，也是两个时代的开始。</p>
+<ul>
+<li>麦克利尼和埃里森这两位硅谷狂人创造的企业，终于走到了一起，甲骨文正式完成一个从数据库公司到IT全业务公司的转变，4月21日开始，甲骨文将成为IBM、惠普的直接竞争对手。通过收购仁科、Siebel、BEA等多家公司到现在的Sun，甲骨文的埃里森5年内终于走出了自己梦想的一步。微笑未完待续</li>
+</ul>
+<h2 id="二，安装步骤："><a href="#二，安装步骤：" class="headerlink" title="二，安装步骤："></a>二，安装步骤：</h2><h4 id="1，首先通过官方网站：https-www-mysql-com"><a href="#1，首先通过官方网站：https-www-mysql-com" class="headerlink" title="1，首先通过官方网站：https://www.mysql.com/"></a>1，首先通过官方网站：<a target="_blank" rel="noopener" href="https://www.mysql.com/">https://www.mysql.com/</a></h4><p>下载安装程序，点击download–选择–MySql Install。<br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184641912-2066692014.jpg" alt="img"></p>
+<h4 id="2，进入下载界面，点击选择MySQL-Server服务进行下载。"><a href="#2，进入下载界面，点击选择MySQL-Server服务进行下载。" class="headerlink" title="2，进入下载界面，点击选择MySQL Server服务进行下载。"></a>2，进入下载界面，点击选择MySQL Server服务进行下载。</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184647637-808157085.jpg" alt="img"></p>
+<h4 id="3，选择一般mysql版本，选择32位或者64位安装包下载。64位的电脑系统可以安装32位和64位软件，32位系统只能安装32位软件，查看电脑是32还是64位可以参考下面链接。"><a href="#3，选择一般mysql版本，选择32位或者64位安装包下载。64位的电脑系统可以安装32位和64位软件，32位系统只能安装32位软件，查看电脑是32还是64位可以参考下面链接。" class="headerlink" title="3，选择一般mysql版本，选择32位或者64位安装包下载。64位的电脑系统可以安装32位和64位软件，32位系统只能安装32位软件，查看电脑是32还是64位可以参考下面链接。"></a>3，选择一般mysql版本，选择32位或者64位安装包下载。64位的电脑系统可以安装32位和64位软件，32位系统只能安装32位软件，查看电脑是32还是64位可以参考下面链接。</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184706543-815931124.jpg" alt="img"></p>
+<h4 id="（1），怎么查看操作系统是32位还是64位"><a href="#（1），怎么查看操作系统是32位还是64位" class="headerlink" title="（1），怎么查看操作系统是32位还是64位"></a>（1），怎么查看操作系统是32位还是64位</h4><p>鼠标右击计算机 点属性 即可查看<br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184758568-401885028.jpg" alt="img"></p>
+<p>打开安装包：<br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184821763-303356596.png" alt="img"></p>
+<h4 id="4，登录用户信息，下载的时候系统提示可以输入用户名等，这样方便进行数据库更新发邮件通知，也可以直接跳过登录，直接下载。"><a href="#4，登录用户信息，下载的时候系统提示可以输入用户名等，这样方便进行数据库更新发邮件通知，也可以直接跳过登录，直接下载。" class="headerlink" title="4，登录用户信息，下载的时候系统提示可以输入用户名等，这样方便进行数据库更新发邮件通知，也可以直接跳过登录，直接下载。"></a>4，登录用户信息，下载的时候系统提示可以输入用户名等，这样方便进行数据库更新发邮件通知，也可以直接跳过登录，直接下载。</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184837228-1898702012.jpg" alt="img"></p>
+<h4 id="5，安装版的数据库，直接双击安装程序一路下一步进行安装。"><a href="#5，安装版的数据库，直接双击安装程序一路下一步进行安装。" class="headerlink" title="5，安装版的数据库，直接双击安装程序一路下一步进行安装。"></a>5，安装版的数据库，直接双击安装程序一路下一步进行安装。</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184846018-1042337977.jpg" alt="img"></p>
+<h4 id="6，安装完成后，创建数据库实例，输入root密码等。"><a href="#6，安装完成后，创建数据库实例，输入root密码等。" class="headerlink" title="6，安装完成后，创建数据库实例，输入root密码等。"></a>6，安装完成后，创建数据库实例，输入root密码等。</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184855688-1473745913.jpg" alt="img"></p>
+<h4 id="7，使用命令启动或者停止mysql服务。"><a href="#7，使用命令启动或者停止mysql服务。" class="headerlink" title="7，使用命令启动或者停止mysql服务。"></a>7，使用命令启动或者停止mysql服务。</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184901995-894104572.jpg" alt="img"></p>
+<p>net start mysql1 其中“mysql1”就是创建的数据库实例名。</p>
+<h4 id="8，使用命令登录。安装完成后，在开始启动中可以看到有一个使用命令链接的dos功能。"><a href="#8，使用命令登录。安装完成后，在开始启动中可以看到有一个使用命令链接的dos功能。" class="headerlink" title="8，使用命令登录。安装完成后，在开始启动中可以看到有一个使用命令链接的dos功能。"></a>8，使用命令登录。安装完成后，在开始启动中可以看到有一个使用命令链接的dos功能。</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130184909298-2023190885.jpg" alt="img"></p>
+<h2 id="三，配置环境："><a href="#三，配置环境：" class="headerlink" title="三，配置环境："></a>三，配置环境：</h2><h4 id="1，把刚刚下载好的安装包路径复制"><a href="#1，把刚刚下载好的安装包路径复制" class="headerlink" title="1，把刚刚下载好的安装包路径复制"></a>1，把刚刚下载好的安装包路径复制</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130185739798-466003946.png" alt="img"></p>
+<h4 id="2，点计算机属性-gt-高级设置-gt-环境变量-gt-系统变量-gt-path-gt-新建-gt-粘贴刚刚复制的路径"><a href="#2，点计算机属性-gt-高级设置-gt-环境变量-gt-系统变量-gt-path-gt-新建-gt-粘贴刚刚复制的路径" class="headerlink" title="2，点计算机属性-&gt;高级设置-&gt;环境变量-&gt;系统变量-&gt;path-&gt;新建-&gt;粘贴刚刚复制的路径"></a>2，点计算机属性-&gt;高级设置-&gt;环境变量-&gt;系统变量-&gt;path-&gt;新建-&gt;粘贴刚刚复制的路径</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130185748758-807718713.png" alt="img"><br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130185806214-987899419.png" alt="img"></p>
+<h4 id="3，win-r-然后-输入cmd-打开终端-输入-Mysql-u-root-p-输入密码（你安装时自己设置的密码）-即可打开数据库-进行相应的操作-（我的博客里面有关于数据库基本操作的详细-介绍）"><a href="#3，win-r-然后-输入cmd-打开终端-输入-Mysql-u-root-p-输入密码（你安装时自己设置的密码）-即可打开数据库-进行相应的操作-（我的博客里面有关于数据库基本操作的详细-介绍）" class="headerlink" title="3，win+r 然后 输入cmd 打开终端 输入 Mysql -u root -p 输入密码（你安装时自己设置的密码） 即可打开数据库 进行相应的操作 （我的博客里面有关于数据库基本操作的详细 介绍）"></a>3，win+r 然后 输入cmd 打开终端 输入 Mysql -u root -p 输入密码（你安装时自己设置的密码） 即可打开数据库 进行相应的操作 （我的博客里面有关于数据库基本操作的详细 介绍）</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210130185958732-2021007873.png" alt="img"><br>如果出现上面这个界面说明环境配置成功了</p>
+<h2 id="个人联系方式"><a href="#个人联系方式" class="headerlink" title="个人联系方式:"></a>个人联系方式:</h2><ul>
+<li>qq：2061302791</li>
+<li>微信：xie2061302791</li>
+<li>电话：15284524485</li>
+<li>个人网站：<a target="_blank" rel="noopener" href="https://xieyingpeng.mysxl.cn/">https://xieyingpeng.mysxl.cn/</a></li>
+<li>Github：<a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/">https://github.com/xieyingpeng/</a></li>
+<li>博客园：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Xieyingpengz">https://www.cnblogs.com/Xieyingpengz</a></li>
+<li>知乎：<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nan-qiao-12-73">https://www.zhihu.com/people/nan-qiao-12-73</a></li>
+<li>gitee：<a target="_blank" rel="noopener" href="https://gitee.com/xie-yingpeng/project-1.git">https://gitee.com/xie-yingpeng/project-1.git</a></li>
+<li>bilibili：<a target="_blank" rel="noopener" href="https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798">https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798</a></li>
+</ul>
+
+  </div>
+</article>
+
+
+
       </div>
-      <% if (is_post()) { %>
-       <%- partial('_partial/post/actions_mobile') %>
-      <% } %>
-      <%- partial('_partial/footer') %>
-      <%- partial('_partial/scripts') %>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/xieyingpeng">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%EF%BC%8C%E5%85%B3%E4%BA%8EMysql%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">一，关于Mysql的介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81mysql-%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-number">1.0.1.</span> <span class="toc-text">1、mysql 的诞生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81mysql%E7%9A%84%E5%8F%91%E5%B1%95"><span class="toc-number">1.0.2.</span> <span class="toc-text">2、mysql的发展</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%EF%BC%8C%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">二，安装步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%8C%E9%A6%96%E5%85%88%E9%80%9A%E8%BF%87%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99%EF%BC%9Ahttps-www-mysql-com"><span class="toc-number">2.0.1.</span> <span class="toc-text">1，首先通过官方网站：https:&#x2F;&#x2F;www.mysql.com&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%8C%E8%BF%9B%E5%85%A5%E4%B8%8B%E8%BD%BD%E7%95%8C%E9%9D%A2%EF%BC%8C%E7%82%B9%E5%87%BB%E9%80%89%E6%8B%A9MySQL-Server%E6%9C%8D%E5%8A%A1%E8%BF%9B%E8%A1%8C%E4%B8%8B%E8%BD%BD%E3%80%82"><span class="toc-number">2.0.2.</span> <span class="toc-text">2，进入下载界面，点击选择MySQL Server服务进行下载。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%8C%E9%80%89%E6%8B%A9%E4%B8%80%E8%88%ACmysql%E7%89%88%E6%9C%AC%EF%BC%8C%E9%80%89%E6%8B%A932%E4%BD%8D%E6%88%96%E8%80%8564%E4%BD%8D%E5%AE%89%E8%A3%85%E5%8C%85%E4%B8%8B%E8%BD%BD%E3%80%8264%E4%BD%8D%E7%9A%84%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F%E5%8F%AF%E4%BB%A5%E5%AE%89%E8%A3%8532%E4%BD%8D%E5%92%8C64%E4%BD%8D%E8%BD%AF%E4%BB%B6%EF%BC%8C32%E4%BD%8D%E7%B3%BB%E7%BB%9F%E5%8F%AA%E8%83%BD%E5%AE%89%E8%A3%8532%E4%BD%8D%E8%BD%AF%E4%BB%B6%EF%BC%8C%E6%9F%A5%E7%9C%8B%E7%94%B5%E8%84%91%E6%98%AF32%E8%BF%98%E6%98%AF64%E4%BD%8D%E5%8F%AF%E4%BB%A5%E5%8F%82%E8%80%83%E4%B8%8B%E9%9D%A2%E9%93%BE%E6%8E%A5%E3%80%82"><span class="toc-number">2.0.3.</span> <span class="toc-text">3，选择一般mysql版本，选择32位或者64位安装包下载。64位的电脑系统可以安装32位和64位软件，32位系统只能安装32位软件，查看电脑是32还是64位可以参考下面链接。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%EF%BC%8C%E6%80%8E%E4%B9%88%E6%9F%A5%E7%9C%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%98%AF32%E4%BD%8D%E8%BF%98%E6%98%AF64%E4%BD%8D"><span class="toc-number">2.0.4.</span> <span class="toc-text">（1），怎么查看操作系统是32位还是64位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%EF%BC%8C%E7%99%BB%E5%BD%95%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%EF%BC%8C%E4%B8%8B%E8%BD%BD%E7%9A%84%E6%97%B6%E5%80%99%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E5%8F%AF%E4%BB%A5%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E7%AD%89%EF%BC%8C%E8%BF%99%E6%A0%B7%E6%96%B9%E4%BE%BF%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9B%B4%E6%96%B0%E5%8F%91%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5%EF%BC%8C%E4%B9%9F%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%B7%B3%E8%BF%87%E7%99%BB%E5%BD%95%EF%BC%8C%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BD%BD%E3%80%82"><span class="toc-number">2.0.5.</span> <span class="toc-text">4，登录用户信息，下载的时候系统提示可以输入用户名等，这样方便进行数据库更新发邮件通知，也可以直接跳过登录，直接下载。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%EF%BC%8C%E5%AE%89%E8%A3%85%E7%89%88%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%8C%E7%9B%B4%E6%8E%A5%E5%8F%8C%E5%87%BB%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F%E4%B8%80%E8%B7%AF%E4%B8%8B%E4%B8%80%E6%AD%A5%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85%E3%80%82"><span class="toc-number">2.0.6.</span> <span class="toc-text">5，安装版的数据库，直接双击安装程序一路下一步进行安装。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6%EF%BC%8C%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%EF%BC%8C%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E4%BE%8B%EF%BC%8C%E8%BE%93%E5%85%A5root%E5%AF%86%E7%A0%81%E7%AD%89%E3%80%82"><span class="toc-number">2.0.7.</span> <span class="toc-text">6，安装完成后，创建数据库实例，输入root密码等。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E5%90%AF%E5%8A%A8%E6%88%96%E8%80%85%E5%81%9C%E6%AD%A2mysql%E6%9C%8D%E5%8A%A1%E3%80%82"><span class="toc-number">2.0.8.</span> <span class="toc-text">7，使用命令启动或者停止mysql服务。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E7%99%BB%E5%BD%95%E3%80%82%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%EF%BC%8C%E5%9C%A8%E5%BC%80%E5%A7%8B%E5%90%AF%E5%8A%A8%E4%B8%AD%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E6%9C%89%E4%B8%80%E4%B8%AA%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E9%93%BE%E6%8E%A5%E7%9A%84dos%E5%8A%9F%E8%83%BD%E3%80%82"><span class="toc-number">2.0.9.</span> <span class="toc-text">8，使用命令登录。安装完成后，在开始启动中可以看到有一个使用命令链接的dos功能。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%EF%BC%8C%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">三，配置环境：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%8C%E6%8A%8A%E5%88%9A%E5%88%9A%E4%B8%8B%E8%BD%BD%E5%A5%BD%E7%9A%84%E5%AE%89%E8%A3%85%E5%8C%85%E8%B7%AF%E5%BE%84%E5%A4%8D%E5%88%B6"><span class="toc-number">3.0.1.</span> <span class="toc-text">1，把刚刚下载好的安装包路径复制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%8C%E7%82%B9%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B1%9E%E6%80%A7-gt-%E9%AB%98%E7%BA%A7%E8%AE%BE%E7%BD%AE-gt-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F-gt-%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F-gt-path-gt-%E6%96%B0%E5%BB%BA-gt-%E7%B2%98%E8%B4%B4%E5%88%9A%E5%88%9A%E5%A4%8D%E5%88%B6%E7%9A%84%E8%B7%AF%E5%BE%84"><span class="toc-number">3.0.2.</span> <span class="toc-text">2，点计算机属性-&gt;高级设置-&gt;环境变量-&gt;系统变量-&gt;path-&gt;新建-&gt;粘贴刚刚复制的路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%8Cwin-r-%E7%84%B6%E5%90%8E-%E8%BE%93%E5%85%A5cmd-%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF-%E8%BE%93%E5%85%A5-Mysql-u-root-p-%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%EF%BC%88%E4%BD%A0%E5%AE%89%E8%A3%85%E6%97%B6%E8%87%AA%E5%B7%B1%E8%AE%BE%E7%BD%AE%E7%9A%84%E5%AF%86%E7%A0%81%EF%BC%89-%E5%8D%B3%E5%8F%AF%E6%89%93%E5%BC%80%E6%95%B0%E6%8D%AE%E5%BA%93-%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%BA%94%E7%9A%84%E6%93%8D%E4%BD%9C-%EF%BC%88%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%87%8C%E9%9D%A2%E6%9C%89%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%9A%84%E8%AF%A6%E7%BB%86-%E4%BB%8B%E7%BB%8D%EF%BC%89"><span class="toc-number">3.0.3.</span> <span class="toc-text">3，win+r 然后 输入cmd 打开终端 输入 Mysql -u root -p 输入密码（你安装时自己设置的密码） 即可打开数据库 进行相应的操作 （我的博客里面有关于数据库基本操作的详细 介绍）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">个人联系方式:</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&text=如何安装数据库并配置环境"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&title=如何安装数据库并配置环境"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&is_video=false&description=如何安装数据库并配置环境"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=如何安装数据库并配置环境&body=Check out this article: http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&title=如何安装数据库并配置环境"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&title=如何安装数据库并配置环境"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&title=如何安装数据库并配置环境"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&title=如何安装数据库并配置环境"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/02/20/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/&name=如何安装数据库并配置环境&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2021 лӦ��
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/xieyingpeng">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
     </div>
 </body>
 </html>
