@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Linux常用命令大全一提到操作系统，我们首先想到的就是windows和Linux。Windows以直观的可视化的方式操作，特别适合在桌面端PC上操作执行相应的软件。相比较Windows来说，Linux的很多管控都需要用命令来操作。 Linux命令行方式的操作，特别是在服务器端编程、管理、运维方面，都非常的简单、短小、精悍。短短一行组合命令，即可完成在Windows需要各种加工、整合的复杂高效的功">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux操作系统命令大全">
+<meta property="og:url" content="http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/index.html">
+<meta property="og:site_name" content="xieyingpengblogs">
+<meta property="og:description" content="Linux常用命令大全一提到操作系统，我们首先想到的就是windows和Linux。Windows以直观的可视化的方式操作，特别适合在桌面端PC上操作执行相应的软件。相比较Windows来说，Linux的很多管控都需要用命令来操作。 Linux命令行方式的操作，特别是在服务器端编程、管理、运维方面，都非常的简单、短小、精悍。短短一行组合命令，即可完成在Windows需要各种加工、整合的复杂高效的功">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-02-22T07:10:46.000Z">
+<meta property="article:modified_time" content="2021-02-22T07:11:39.522Z">
+<meta property="article:author" content="лӦ��">
+<meta property="article:tag" content="java html">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Linux操作系统命令大全</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">xieyingpengblogs</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2021/02/22/git%E5%88%86%E6%94%AF%E7%9A%84%E7%AE%A1%E7%90%86/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&text=Linux操作系统命令大全"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&title=Linux操作系统命令大全"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&is_video=false&description=Linux操作系统命令大全"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Linux操作系统命令大全&body=Check out this article: http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&title=Linux操作系统命令大全"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&title=Linux操作系统命令大全"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&title=Linux操作系统命令大全"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&title=Linux操作系统命令大全"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&name=Linux操作系统命令大全&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8"><span class="toc-number">1.</span> <span class="toc-text">Linux常用命令大全</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text">1.启动网络命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-pwd%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">2.pwd命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-ls%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text">3.ls命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-cd%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.</span> <span class="toc-text">4.cd命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-mkdir%E5%91%BD%E4%BB%A4"><span class="toc-number">1.5.</span> <span class="toc-text">5.mkdir命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-rmdir%E5%91%BD%E4%BB%A4"><span class="toc-number">1.6.</span> <span class="toc-text">6.rmdir命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-touch%E5%91%BD%E4%BB%A4"><span class="toc-number">1.7.</span> <span class="toc-text">7.touch命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-rm%E5%91%BD%E4%BB%A4"><span class="toc-number">1.8.</span> <span class="toc-text">8.rm命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-echo%E5%91%BD%E4%BB%A4"><span class="toc-number">1.9.</span> <span class="toc-text">9.echo命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-gt-%E5%92%8C-gt-gt-%E5%91%BD%E4%BB%A4"><span class="toc-number">1.10.</span> <span class="toc-text">10.&gt;和&gt;&gt;命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.</span> <span class="toc-text">11.文件查看命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4"><span class="toc-number">1.12.</span> <span class="toc-text">12.文件编辑命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-cp%E5%91%BD%E4%BB%A4"><span class="toc-number">1.13.</span> <span class="toc-text">13.cp命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-scp%E5%91%BD%E4%BB%A4"><span class="toc-number">1.14.</span> <span class="toc-text">14.scp命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-mv%E5%91%BD%E4%BB%A4"><span class="toc-number">1.15.</span> <span class="toc-text">15.mv命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-man%E5%91%BD%E4%BB%A4"><span class="toc-number">1.16.</span> <span class="toc-text">16.man命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-free%E5%91%BD%E4%BB%A4"><span class="toc-number">1.17.</span> <span class="toc-text">17.free命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18df%E5%91%BD%E4%BB%A4"><span class="toc-number">1.18.</span> <span class="toc-text">18df命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19wc%E5%91%BD%E4%BB%A4"><span class="toc-number">1.19.</span> <span class="toc-text">19wc命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-ps%E5%91%BD%E4%BB%A4"><span class="toc-number">1.20.</span> <span class="toc-text">20.ps命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-kill%E5%91%BD%E4%BB%A4"><span class="toc-number">1.21.</span> <span class="toc-text">21.kill命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4"><span class="toc-number">1.22.</span> <span class="toc-text">22.用户和权限命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-chmod-%E8%B5%8B%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4"><span class="toc-number">1.23.</span> <span class="toc-text">23.chmod 赋权限命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4"><span class="toc-number">1.24.</span> <span class="toc-text">24.查找命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#25-%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">1.25.</span> <span class="toc-text">25.压缩命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#26-source%E5%91%BD%E4%BB%A4"><span class="toc-number">1.26.</span> <span class="toc-text">26.source命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#27-export%E5%91%BD%E4%BB%A4"><span class="toc-number">1.27.</span> <span class="toc-text">27.export命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#28-cut%E5%91%BD%E4%BB%A4"><span class="toc-number">1.28.</span> <span class="toc-text">28.cut命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#29-printf%E5%91%BD%E4%BB%A4"><span class="toc-number">1.29.</span> <span class="toc-text">29.printf命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#30-awk%E5%91%BD%E4%BB%A4"><span class="toc-number">1.30.</span> <span class="toc-text">30.awk命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#31-sed%E5%91%BD%E4%BB%A4"><span class="toc-number">1.31.</span> <span class="toc-text">31.sed命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-service%E5%91%BD%E4%BB%A4"><span class="toc-number">1.32.</span> <span class="toc-text">32.service命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-chkconfig%E5%91%BD%E4%BB%A4"><span class="toc-number">1.33.</span> <span class="toc-text">33.chkconfig命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#34-sudo%E5%91%BD%E4%BB%A4"><span class="toc-number">1.34.</span> <span class="toc-text">34.sudo命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#35-ping%E5%91%BD%E4%BB%A4"><span class="toc-number">1.35.</span> <span class="toc-text">35.ping命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#36-ifconfig%E5%91%BD%E4%BB%A4"><span class="toc-number">1.36.</span> <span class="toc-text">36.ifconfig命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#37-netstat%E5%91%BD%E4%BB%A4"><span class="toc-number">1.37.</span> <span class="toc-text">37.netstat命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#38-rpm%E5%91%BD%E4%BB%A4"><span class="toc-number">1.38.</span> <span class="toc-text">38.rpm命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#39%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">1.39.</span> <span class="toc-text">39联系方式</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Linux操作系统命令大全
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">xieyingpengblogs</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2021-02-22T07:10:46.000Z" itemprop="datePublished">2021-02-22</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Linux常用命令大全"><a href="#Linux常用命令大全" class="headerlink" title="Linux常用命令大全"></a>Linux常用命令大全</h1><p>一提到操作系统，我们首先想到的就是windows和Linux。Windows以直观的可视化的方式操作，特别适合在桌面端PC上操作执行相应的软件。相比较Windows来说，Linux的很多管控都需要用命令来操作。</p>
+<p>Linux命令行方式的操作，特别是在服务器端编程、管理、运维方面，都非常的简单、短小、精悍。短短一行组合命令，即可完成在Windows需要各种加工、整合的复杂高效的功能操作。 不信，下面全都是。</p>
+<h2 id="1-启动网络命令"><a href="#1-启动网络命令" class="headerlink" title="1.启动网络命令"></a>1.启动网络命令</h2><p>ip addr 查看网卡信息</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service network start 启动网卡</span><br><span class="line">service network stop 关闭网卡</span><br><span class="line">service network restart 重启网络</span><br></pre></td></tr></table></figure>
+<h2 id="2-pwd命令"><a href="#2-pwd命令" class="headerlink" title="2.pwd命令"></a>2.pwd命令</h2><p>pwd命令，查看当前目录的路径</p>
+<p>linux下所有的绝对路径都是从根目录”/“开始</p>
+<p>/root:是linux下root用户的根目录</p>
+<p>/home:是linux下其他用户的默认根目录 （例如：在linux上创建了一个bow用户，那么就会在/home下面生成一个bow目录作为bow用户的根目录）</p>
+<p>/etc:是linux下系统配置文件目录</p>
+<p>/tmp:临时文件目录，所有用户都可以用</p>
+<h2 id="3-ls命令"><a href="#3-ls命令" class="headerlink" title="3.ls命令"></a>3.ls命令</h2><p>ls [参数] 目录路径<br>ls 表示查看目录下的文件</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ls #表示查看当前目录下的文件</span><br><span class="line">ls -l #表示查看当前目录下的详细信息</span><br><span class="line">ls -a #表示查看当前目录下的所有文件(包含隐藏文件)</span><br><span class="line">ls -la #表示查看当前目录下的所有文件（包含隐藏文件）的详细信息</span><br><span class="line">ls -lh #h是以适当的单位来显示文件的大小 ls -lh表示查看当前目录下的文件的详细信息，并以合适单位显示文件大小 </span><br><span class="line"> </span><br><span class="line">ls -l / #表示查看根目录&quot;/&quot;下文件的详细信息</span><br><span class="line"> </span><br><span class="line">ls /etc #表示查看目录/etc下的文件</span><br><span class="line"> </span><br><span class="line">ls --help #查看命令的帮助文档</span><br><span class="line">--help参数：所有linux上的命令都有，但写法上有如下几种：</span><br><span class="line"> (1)--help</span><br><span class="line">  (2)--h</span><br><span class="line">  (3)-help</span><br><span class="line">  (4)-h</span><br><span class="line">ll命令:它和ls -l命令功能相同，但是不是所有的linux上都默认安装</span><br></pre></td></tr></table></figure>
+<h2 id="4-cd命令"><a href="#4-cd命令" class="headerlink" title="4.cd命令"></a>4.cd命令</h2><p>cd 目录路径 #进入一个目录，目录路径可以是绝对路径(以/开始的路径都是绝对路径)，也可以是相对路径<br>相对路径：以非/开始的路径，<br>注意: “.”表示当前目录<br>“…”表示当前目录的上一级目录，它可以多个一起使用<br>“<del>“表示当前用户的根目录 例如：root用户时，</del>表示/root目录 bow用户时，~表示/home/bow目录</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cd / #表示进入系统根目录</span><br><span class="line">cd usr/ #表示进入当前目录下的usr目录</span><br><span class="line">cd local/ #表示进入当前目录下的local目录</span><br><span class="line">cd ./bin #表示进入当前目录下的bin目录</span><br><span class="line">cd .. #表示进入当前目录的上一级目录</span><br><span class="line">cd ../.. #表示进入当前目录的上级目录的上一级目录</span><br><span class="line">cd /usr/local/bin #进入/usr/local/bin目录</span><br><span class="line">cd ../etc #表示进入和当前目录同级的etc目录 #..表示当前目录的上一级目录 ../etc表示当前目录上级目录下的etc目录（和当前目录同级）</span><br><span class="line">cd ~ #表示进入当前用户的根目录（cd ~ 和直接执行cd后不加目录的效果相同）</span><br><span class="line"> #例如：root用户进入/root目录，bow用户进入/home/bow目录</span><br><span class="line"> </span><br><span class="line">cd ~/data #表示进入当前用户根目录下的data目录 例如：root用户则进入了/root/data目录</span><br></pre></td></tr></table></figure>
+<h2 id="5-mkdir命令"><a href="#5-mkdir命令" class="headerlink" title="5.mkdir命令"></a>5.mkdir命令</h2><p>mkdir 目录路径 #创建一个目录，目录路径可以是绝对路径也可以是相对路径</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir data #在当前目录下创建一个data目录</span><br><span class="line">mkdir ./dir #在当前目录下创建一个dir目录</span><br><span class="line">mkdir /root/tmp #在/root目录下创建一个tmp目录</span><br></pre></td></tr></table></figure>
+<p>mkdir创建目录时，只有在目录的上级目录存在时，才会创建</p>
+<p>mkdir -p 目录#创建目录时，如果没有父目录，会创建父目录，递归地创建目录</p>
+<p>mkdir -p a/b/c #在当前目录下创建3级目录</p>
+<h2 id="6-rmdir命令"><a href="#6-rmdir命令" class="headerlink" title="6.rmdir命令"></a>6.rmdir命令</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rmdir [参数] 目录路径 #删除目录命令，rmdir默认只能删除空目录</span><br><span class="line"> </span><br><span class="line">rmdir ./dir #删除当前目录下的dir目录</span><br><span class="line"> </span><br><span class="line">rmdir -p 目录路径 #表示删除目录和它的父目录（目录要是一个空目录）</span><br><span class="line">rmdir -p a/b/c #删除当前目录下的a/b/c目录</span><br></pre></td></tr></table></figure>
+<h2 id="7-touch命令"><a href="#7-touch命令" class="headerlink" title="7.touch命令"></a>7.touch命令</h2><p><strong>touch 命令 #创建文件命令</strong></p>
+<p>touch 文件路径</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch 1.txt #在当前目录下创建一个1.txt文件</span><br><span class="line">touch /root/2.txt #在/root目录下创建一个2.txt文件</span><br></pre></td></tr></table></figure>
+<h2 id="8-rm命令"><a href="#8-rm命令" class="headerlink" title="8.rm命令"></a>8.rm命令</h2><p>rm [参数] 路径 #删除命令</p>
+<p>rm 1.txt #删除当前目录下的1.txt文件，删除时会提示，是否删除如果输入y表示删除，输入n表示不删除</p>
+<p>rm -f /root/2.txt #-f表示强制删除，不会提示,强制删除/root目录下的2.txt</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">rm -r a/ #递归的删除当前目录下a目录下的所有内容</span><br><span class="line">[root@bow ~]# rm -r a/</span><br><span class="line">rm：是否进入目录&quot;a/&quot;? y</span><br><span class="line">rm：是否进入目录&quot;a/b&quot;? y</span><br><span class="line">rm：是否进入目录&quot;a/b/c&quot;? y</span><br><span class="line">rm：是否删除普通空文件 &quot;a/b/c/3.txt&quot;？y</span><br><span class="line">rm：是否删除目录 &quot;a/b/c&quot;？y</span><br><span class="line">rm：是否删除普通空文件 &quot;a/b/2.txt&quot;？y</span><br><span class="line">rm：是否删除目录 &quot;a/b&quot;？y</span><br><span class="line">rm：是否删除普通空文件 &quot;a/1.txt&quot;？y</span><br><span class="line">rm：是否删除目录 &quot;a/&quot;？y</span><br><span class="line">rm -rf a/ #强制删除当前目录下a目录及a目录下的所有内容</span><br><span class="line"> </span><br><span class="line">rm -rf * #删除当前目录下的所有内容</span><br><span class="line">rm -rf a/* #删除当前目录下a目录下的所有内容</span><br><span class="line">rm -rf *.txt #删除当前目录下的所有txt文件</span><br><span class="line">rm -rf *s* #删除当前目录下所有名字中包含s的文件或文件夹</span><br></pre></td></tr></table></figure>
+<h2 id="9-echo命令"><a href="#9-echo命令" class="headerlink" title="9.echo命令"></a>9.echo命令</h2><p>echo #输出命令，可以输入变量，字符串的值</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo Hello World #打印Hello World</span><br><span class="line">echo $PATH #打印环境变量PATH的值,其中$是取变量值的符号，用法：$变量名 或者 $&#123;变量名&#125;</span><br><span class="line"> </span><br><span class="line">echo -n #打印内容但不换行</span><br><span class="line">echo -n Hello World </span><br></pre></td></tr></table></figure>
+<h2 id="10-gt-和-gt-gt-命令"><a href="#10-gt-和-gt-gt-命令" class="headerlink" title="10.&gt;和&gt;&gt;命令"></a>10.&gt;和&gt;&gt;命令</h2><p>和&gt;&gt;:输出符号，将内容输出到文件中，&gt;表示覆盖(会删除原文件内容) &gt;&gt;表示追加</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">echo Hello World &gt; 1.txt #将Hello World输出到当前目录下的1.txt文件</span><br><span class="line"> #如果当前目录下没有1.txt文件会创建一个新文件，</span><br><span class="line">  #如果当前目录下有1.txt，则会删除原文件内容，写入Hello World</span><br><span class="line">echo 1234 &gt;&gt; 1.txt #将1234追加到当前目录下的1.txt中，如果文件不存在会创建新文件</span><br></pre></td></tr></table></figure>
+<p>通过&gt;和&gt;&gt;都可以创建文件</p>
+<h2 id="11-文件查看命令"><a href="#11-文件查看命令" class="headerlink" title="11.文件查看命令"></a>11.文件查看命令</h2><p><strong>（1）cat 文件路径 #查看文件的所有内容</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat 1.txt #查看当前目录下1.txt的内容</span><br><span class="line">cat /root/1.txt #查看/root目录下的1.txt文件内容</span><br></pre></td></tr></table></figure>
+<p>（2）more 文件路径 #分页查看文件内容**</p>
+<p>more linux常用命令.txt #分页查看当前目录下linux常用命令.txt文件的内容</p>
+<p>#按空格或回车，会继续加载文件内容，按q退出查看</p>
+<p>#当加载到文件末尾时，会自动退出查看</p>
+<p>（3）less 文件路径 #分页查看文件内容**</p>
+<p>less linux常用命令.txt #分页查看文件内容，按空格继续加载文件，按q退出查看，不会自动退出查看</p>
+<p>（40head [参数] 文件路径 #从文件开始查看文件**</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">head linux常用命令.txt #查看文件的前10行内容</span><br><span class="line"> </span><br><span class="line">head -n 文件路径 # n是一个正整数，表示查看文件的前n行数据</span><br><span class="line">head -20 linux常用命令.txt #查看文件的前20行内容</span><br></pre></td></tr></table></figure>
+<p>（5）tail [参数] 文件路径 #从文件的末尾查看文件内容**</p>
+<p>tail linux常用命令.txt #查看文件的后10行内容</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tail -n 文件路径 # n是一个正整数，表示查看文件的后n行数据</span><br><span class="line">tail -15 linux常用命令.txt #查看文件后15行内容</span><br><span class="line"> </span><br><span class="line">tail -f 文件路径 #动态的查看文件的最后几行内容(查看文件时，等待文件更新，如果文件更新了，会显示出新的内容)</span><br></pre></td></tr></table></figure>
+<p><strong>tail -f 1.txt #查看文件1.txt的最新内容，tail -f 一般用来查看日志文件</strong> <strong>按CTRL+C或才CTRL+Z退出查看</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CTRL+C：表示暂停进程</span><br><span class="line">CTRL+Z: 表示停止进程</span><br></pre></td></tr></table></figure>
+<h2 id="12-文件编辑命令"><a href="#12-文件编辑命令" class="headerlink" title="12.文件编辑命令"></a>12.文件编辑命令</h2><p><strong>vi/vim命令：这两个命令在使用上几乎完全一样（个人喜欢vim命令）</strong></p>
+<p><strong>安装vim命令：（安装是需要网络的）</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install vim</span><br></pre></td></tr></table></figure>
+<p>yum命令是centos和red hat系统上使用官方资源包去安装软件的命令</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install 软件名</span><br><span class="line">yum -y remove 软件名</span><br></pre></td></tr></table></figure>
+<p><strong>查看虚拟机能不能上外网：</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br><span class="line">CTRL+C或者CTRL+Z退出</span><br></pre></td></tr></table></figure>
+<p><strong>vim命令总体分为两类</strong></p>
+<p>vim 文件路径 –进入非编辑模式</p>
+<p>非编辑模式命令：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">yy：复制光标当前行</span><br><span class="line">p：粘贴</span><br><span class="line">dd:删除光标当前行</span><br><span class="line">$:光标跳到当前行的行尾</span><br><span class="line">^:光标跳到当前行的行首</span><br><span class="line"> </span><br><span class="line">:s/原字符串/新字符串/:替换光标当前行内容</span><br><span class="line">:%s/原字符串/新字符串/g:全文替换 #g表示global i表示ignore忽略大小写</span><br><span class="line"> </span><br><span class="line">/要查找的内容:从光标当前行向后查找内容</span><br><span class="line">/d #在文件中查找d字母</span><br><span class="line">?要查找的内容：从光标当前位置向前查找内容</span><br><span class="line">?d #查找文件中的d字母</span><br><span class="line">CTRL+F:向下翻1页</span><br><span class="line">CTRL+B:向上翻1页</span><br><span class="line"> </span><br><span class="line">:set nu：显示文件的行号</span><br><span class="line">:set nonu: 去掉行号显示</span><br><span class="line">u:撤消</span><br><span class="line"> </span><br><span class="line">**:set ff :显示文件的格式 #unix表示在unix上的文件 dos表示文件是windows上的文件**</span><br><span class="line">:w ：表示保存文件</span><br><span class="line">:q :表示退出vim命令</span><br><span class="line">:wq:保存并退出</span><br><span class="line">:w!:强制保存</span><br><span class="line">:q!:强制退出但不保存</span><br><span class="line">:wq!:强制保存并退出</span><br><span class="line">i:表示进入编辑模式，并且光标在当前行</span><br><span class="line">o：表示进入编辑模式，并且光标出现的当前行的下一行(新行)</span><br></pre></td></tr></table></figure>
+<p><strong>编辑模式命令：</strong></p>
+<p><strong>编辑模式下可以能过方向键控制光标的位置，并且可以输入文件到光标当前位置</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ESC:退出编辑模式</span><br></pre></td></tr></table></figure>
+<h2 id="13-cp命令"><a href="#13-cp命令" class="headerlink" title="13.cp命令"></a>13.cp命令</h2><p><strong>cp 拷贝命令</strong></p>
+<p><strong>cp [参数] 原文件路径</strong> <strong>目标文件路径</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp 1.txt a/ #将1.txt文件拷贝到a目录下</span><br><span class="line">cp 1.txt 2.txt #将1.txt拷贝到2.txt</span><br><span class="line">cp -r a data #-r参数表示将目录和目录下的文件一起拷贝，将a目录拷贝到data目录</span><br></pre></td></tr></table></figure>
+<h2 id="14-scp命令"><a href="#14-scp命令" class="headerlink" title="14.scp命令"></a>14.scp命令</h2><p><strong>scp 远程拷贝命令，它可以将本地文件拷贝到远程服务器，也可以将远程服务器的文件拷贝到本地，也可以将一台服务器文件拷贝到另一台</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">scp -r 本地文件路径 用户名@ip[:port]:远程路径 #将本地文件拷贝到远程服务器</span><br><span class="line">scp -r 2.txt root@192.168.5.105:/root/data/ #将本地的2.txt拷贝到192.168.5.105的/root/data目录下</span><br><span class="line"> </span><br><span class="line">scp -r 用户名@ip[:port]:远程文件路径 本地路径 #将远程文件拷贝到本地</span><br><span class="line">scp -r root@192.168.5.105:/root/3.bak /root/data #将远程的/root/3.bak文件拷贝到本地的/root/data目录</span><br></pre></td></tr></table></figure>
+<p><strong>scp -r 用户名@ip[:port]:远程文件路径</strong> <strong>用户名@ip[:port]:远程文件路径 #将文件从一台服务器拷贝到另一台服务器</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r root@192.168.5.105:/root/tmp root@192.168.5.105:/root/data/ #将/root/tmp拷贝到远程的/root/data目录下</span><br></pre></td></tr></table></figure>
+<h2 id="15-mv命令"><a href="#15-mv命令" class="headerlink" title="15.mv命令"></a>15.mv命令</h2><p><strong>mv 移动命令,它可以移动文件,也可以给文件改名</strong></p>
+<p><strong>mv 原文件路径</strong> <strong>目标文件路径 #将文件从一个地方拷贝到另一个地方</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mv 1.txt 12.txt #将文件1.txt改名为12.txt</span><br><span class="line">mv tmp tmp #将tmp目录改名为tm</span><br><span class="line">mv 12.txt tm #将文件12.txt移动到tm目录下</span><br></pre></td></tr></table></figure>
+<h2 id="16-man命令"><a href="#16-man命令" class="headerlink" title="16.man命令"></a>16.man命令</h2><p><strong>man 命令,查看命令的命令,查看命令帮助文档(显示的信息最详细)</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">man mv #查看mv命令的文件</span><br><span class="line"> </span><br><span class="line">man命令和命令的 --help参数结果相似(man命令只适用于linux本身的命令)</span><br></pre></td></tr></table></figure>
+<h2 id="17-free命令"><a href="#17-free命令" class="headerlink" title="17.free命令"></a>17.free命令</h2><p><strong>free命令,它是用来查看系统内存的命令</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">free #查看系统内存使用情况</span><br><span class="line">free -h #查看内存使用情况,并且以合适的单位显示大小</span><br></pre></td></tr></table></figure>
+<h2 id="18df命令"><a href="#18df命令" class="headerlink" title="18df命令"></a>18df命令</h2><p><strong>df命令,它是查看系统硬盘的命令</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df #查看系统硬盘使用情况</span><br><span class="line">df -h #查看硬盘使用,并以合适单位显示大小</span><br></pre></td></tr></table></figure>
+<h2 id="19wc命令"><a href="#19wc命令" class="headerlink" title="19wc命令"></a>19wc命令</h2><p><strong>wc 命令,word count的缩写,它是查看文件的单词个数</strong></p>
+<p><strong>wc [参数] 文件</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wc -l linux常用命令.txt #-l表示line行数 计算文件的行数</span><br><span class="line">wc -w linux常用命令.txt #-w表示word单词个数 计算文件的单词个数</span><br></pre></td></tr></table></figure>
+<h2 id="20-ps命令"><a href="#20-ps命令" class="headerlink" title="20.ps命令"></a>20.ps命令</h2><p><strong>ps命令,它是查看系统进程的命令</strong></p>
+<p>ps -aux</p>
+<p>ps -ef</p>
+<p>jps 查看java进程</p>
+<h2 id="21-kill命令"><a href="#21-kill命令" class="headerlink" title="21.kill命令"></a>21.kill命令</h2><p>kill 进程id #结束进程</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root 21752 1.6 0.5 158800 5532 ? Ss 08:34 0:00 sshd: root@pts/0</span><br></pre></td></tr></table></figure>
+<p>kill 21752 #结束ssh登陆的进程</p>
+<p>kill -9 进程id #强制结束进程</p>
+<h2 id="22-用户和权限命令"><a href="#22-用户和权限命令" class="headerlink" title="22.用户和权限命令"></a>22.用户和权限命令</h2><p>创建用户组:</p>
+<p>groupadd 用户组名称 #创建一个用户组**</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">groupadd bows #创建一个叫bows的用户组</span><br><span class="line">删除用户组:</span><br><span class="line">groupdel 用户组名称 #删除一个用户组(删除时必须是用户组下没有用户时)</span><br><span class="line">groupdel bows #删除用户组</span><br></pre></td></tr></table></figure>
+<p><strong>创建用户:</strong></p>
+<p><strong>useradd 用户名 [-g 用户组名 -G 用户组名] #创建一个用户,-g指定用户的主用户组,-G指定用户的其他用户组</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useradd bow -g bows #创建bow用户,并指定它的主用户组是bows</span><br><span class="line">id 用户名 #查看用户的id</span><br><span class="line">id bow #查看用户bow的id</span><br></pre></td></tr></table></figure>
+<p><strong>删除用户:</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">userdel 用户名 #删除用户</span><br><span class="line">userdel bow #删除用户bow</span><br></pre></td></tr></table></figure>
+<p><strong>切换用户:</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su 用户名 #切换用户,但不加载用户的环境变量</span><br><span class="line">su - 用户名 #切换用户,并加载用户的环境变量(建议使用这种方式切换用户)</span><br><span class="line">su bow #切换到bow用户(root用户切换到其他用户是不需要输入密码的,其他用户切换到root用户是要输入root用户密码的,其他用户之间的切换也是需要密码)</span><br><span class="line">exit #退出当前用户的登陆</span><br></pre></td></tr></table></figure>
+<p><strong>修改用户密码:</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">passwd 用户名 #修改用户密码</span><br><span class="line">passwd bow #修改bow用户的密码</span><br></pre></td></tr></table></figure>
+<p><strong>权限:</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">文件类型        用户权限       用户组权限       其他用户权限</span><br><span class="line">-                 rw-              r--             r--                . 1 root </span><br><span class="line">root 5890 3月 23 14:11 linux常用命令.txt</span><br><span class="line">d                 rwx              r-x             r-x                . 4 root </span><br><span class="line">root  81 3月 24 08:06 data</span><br><span class="line">d表示文件夹    u表示用户权限   g表示用户组权限   o表示其他用户权限</span><br><span class="line"> </span><br><span class="line">r:表示读权限 数字表示为4</span><br><span class="line">w:表示写权限 数字表示为2</span><br><span class="line">x:表示执行权限 数字表示为1</span><br><span class="line">-:表示没有权限</span><br></pre></td></tr></table></figure>
+<h2 id="23-chmod-赋权限命令"><a href="#23-chmod-赋权限命令" class="headerlink" title="23.chmod 赋权限命令"></a>23.chmod 赋权限命令</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">chmod 权限 文件路径</span><br><span class="line">-rw-r--r--. 1 root root   31 3月  24 07:46 2.txt</span><br><span class="line">chmod u+x 2.txt #给用户加上执行权限</span><br><span class="line">-rwxr--r--. 1 root root   31 3月  24 07:46 2.txt</span><br><span class="line">chmod g+w 2.txt #给用户组加写权限</span><br><span class="line">-rwxrw-r--. 1 root root   31 3月  24 07:46 2.txt</span><br><span class="line">chmod o+x 2.txt #给其他用户加执行权限</span><br><span class="line">-rwxrw-r-x. 1 root root   31 3月  24 07:46 2.txt</span><br><span class="line">chmod g-w 2.txt #去掉用户的写权限 </span><br><span class="line">-rwxr--r-x. 1 root root   31 3月  24 07:46 2.txt</span><br></pre></td></tr></table></figure>
+<p><strong>用3个数字来设置文件或目录的权限,第1个数字表示用户权限,第2数字表示用户组权限,第3个数字表示其他用户权限</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chmod 755 2.txt #设置用户的权限为rwx,用户组的权限r-x,其他用户的权限r-x</span><br><span class="line">-rwxr-xr-x. 1 root root 31 3月 24 07:46 2.txt</span><br><span class="line">chmod 766 2.txt #设置用户权限为rwx,用户组权限rw-,其他用户的权限rw-</span><br><span class="line">-rwxrw-rw-. 1 root root 31 3月 24 07:46 2.txt</span><br></pre></td></tr></table></figure>
+<p><strong>设置目录权限时,要使用-R参数,保证目录下的所有文件和目录的权限相同</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">drwxr-xr-x. 4 root root 81 3月 24 08:06 data</span><br><span class="line">chmod -R 777 data #将data目录以及它下面的所有文件的权限设置为rwxrwxrwx</span><br><span class="line">drwxrwxrwx. 4 root root 81 3月 24 08:06 data</span><br></pre></td></tr></table></figure>
+<p><strong>chown 命令,它是更改文件所属用户</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">chown -R 用户[:用户组] 目录或文件</span><br><span class="line">-rwxrw-rw-. 1 root root 31 3月 24 07:46 2.txt</span><br><span class="line">chown bow 2.txt #将2.txt的所属用户改为bow</span><br><span class="line">-rwxrw-rw-. 1 bow root 31 3月 24 07:46 2.txt</span><br><span class="line">chown bow:bows 2.txt #将2.txt所属的用户改为bow,用户组改为bows</span><br><span class="line">-rwxrw-rw-. 1 bow bows 31 3月 24 07:46 2.txt</span><br><span class="line">drwxr--r--. 4 root root 81 3月 24 08:06 data</span><br><span class="line">chown -R bow:bows data #将data目录及它子目录文件的所属用户改为bow,用户组改为bows</span><br><span class="line">drwxr--r--. 4 bow bows 81 3月 24 08:06 data</span><br></pre></td></tr></table></figure>
+<h2 id="24-查找命令"><a href="#24-查找命令" class="headerlink" title="24.查找命令"></a>24.查找命令</h2><p><strong>find命令,可以根据文件的时间,名称等查找文件</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find *.txt #查找txt文件</span><br></pre></td></tr></table></figure>
+<p><strong>grep 命令,查找内容</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep cat linux常用命令.txt #在linux常用命令.txt文件中查询包含cat的行,查找文件内容</span><br></pre></td></tr></table></figure>
+<p><strong>| 通道符号,连接两个命令的,将前一个命令的查询结果传给后一个命令</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep sshd #查看系统中sshd的进程 </span><br><span class="line">ps -ef | grep java #查看所有java进程</span><br><span class="line">grep -v #-v参数表示查询不包含查找条件的行</span><br><span class="line">grep -v cat linux常用命令.txt #查找linux常用命令.txt中不包含cat的行</span><br><span class="line"> </span><br><span class="line">ps -ef | grep sshd | grep -v grep #查询sshd的进程,不包括grep的行</span><br></pre></td></tr></table></figure>
+<p><strong>–了解性查询命令</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">who命令 #查询系统中的用户(登陆的用户)</span><br><span class="line">whoami命令 #查看系统当前用户名</span><br><span class="line">whereis命令 #查看系统安装的某个软件的路径</span><br><span class="line">whereis python #查看python的安装路径</span><br><span class="line">which 命令 #查找软件的可执行文件路径 </span><br><span class="line">which python #查看python可执行文件路径</span><br></pre></td></tr></table></figure>
+<h2 id="25-压缩命令"><a href="#25-压缩命令" class="headerlink" title="25.压缩命令"></a>25.压缩命令</h2><p><strong>安装zip和unzip命令:</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zip unzip</span><br></pre></td></tr></table></figure>
+<p><strong>zip压缩命令</strong></p>
+<p><strong>zip 压缩文件名</strong> <strong>要压缩的文件路径</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">zip 2.zip 2.txt #将2.txt压缩到2.zip中</span><br><span class="line"> </span><br><span class="line">zip data.zip data #只会压缩文件夹,不会压缩文件夹下的内容</span><br><span class="line"> </span><br><span class="line">zip da.zip da/* #压缩文件夹和文件夹内的文件(压缩文件夹和它的下一级文件) </span><br><span class="line"> </span><br><span class="line">zip -r data.zip date #-r表示递归地将文件夹及它的子目录文件全部压缩 </span><br></pre></td></tr></table></figure>
+<p><strong>unzip解压命令</strong></p>
+<p><strong>unzip 压缩文件路径</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">unzip 2.zip #将2.zip压缩包解压到当前目录下</span><br><span class="line">unzip -l 压缩文件名 #不解压文件,查看压缩包内的文件</span><br><span class="line">unzip -l da.zip #查看da.zip压缩文件中包含的文件</span><br><span class="line">unzip da.zip -d 目标目录 #将压缩文件解压到指定目录 </span><br><span class="line">unzip da.zip -d tm/ #将压缩文件da.zip解压到tm目录下</span><br></pre></td></tr></table></figure>
+<p><strong>tar命令,用来压缩和解压缩.tar和.tar.gz包</strong></p>
+<p>压缩.tar包:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar cvf 压缩文件名 要压缩的文件或目录</span><br><span class="line">tar cvf 2.tar 2.txt #将2.txt压缩为2.tar包</span><br><span class="line">tar cvf data.tar data #将data目录夸张到data.tar包中</span><br></pre></td></tr></table></figure>
+<p><strong>解压.tar包:</strong></p>
+<p><strong>tar xvf 压缩文件名 [-C 指定解压目录]</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar xvf 2.tar #将2.tar解压到当前目录</span><br><span class="line">tar xvf 2.tar -C a/ #将2.tar解压到a目录</span><br><span class="line">tar xvf data.tar #解压data.tar到当前目录</span><br></pre></td></tr></table></figure>
+<p><strong>压缩.tar.gz包:</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar zcvf 压缩文件名 要压缩的文件</span><br><span class="line">tar zcvf tm.tar.gz tm #将当前目录下的tm目录压缩为tm.tar.gz</span><br></pre></td></tr></table></figure>
+<p><strong>解压.tar.gz包:</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf 压缩文件名</span><br><span class="line">tar zxvf tm.tar.gz #将tm.tar.gz解压到当前目录</span><br><span class="line">gzip命令,将文件压缩为.gz包(可以用来压缩.tar文件)</span><br><span class="line">gzip 要压缩的文件 </span><br><span class="line">gzip 2.txt #将2.txt压缩为2.txt.gz</span><br><span class="line">gzip data.tar #将data.tar压缩为data.tar.gz</span><br></pre></td></tr></table></figure>
+<h2 id="26-source命令"><a href="#26-source命令" class="headerlink" title="26.source命令"></a>26.source命令</h2><p><strong>source 文件路径 #让配置文件修改结果立即生效,(还可以在shell脚本中引用其他的shell脚本)</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/profile #linux上的系统环境变量配置文件</span><br><span class="line">source /etc/profile #将系统环境变量生效</span><br></pre></td></tr></table></figure>
+<h2 id="27-export命令"><a href="#27-export命令" class="headerlink" title="27.export命令"></a>27.export命令</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">export 导入全局变量(环境变量)</span><br><span class="line"> </span><br><span class="line">export 变量名=变量值</span><br><span class="line">export 变量名</span><br><span class="line"> </span><br><span class="line">变量的赋值:</span><br><span class="line">变量名=变量值</span><br></pre></td></tr></table></figure>
+<p><strong>&lt;&lt;EOF</strong></p>
+<p><strong>&lt;&lt;EOF … EOF:将&lt;&lt;EOF和EOF之间的多行内容传给前面的命令,</strong><br><strong>其中EOF可以是任意字符串,但约定都使用EOF</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@bow ~]# cat &lt;&lt;EOF</span><br><span class="line">&gt; HELLO</span><br><span class="line">&gt; WORD</span><br><span class="line">&gt; JOB</span><br><span class="line">&gt; SMITH</span><br><span class="line">&gt; EOF</span><br><span class="line">HELLO</span><br><span class="line">WORD</span><br><span class="line">JOB</span><br><span class="line">SMITH</span><br></pre></td></tr></table></figure>
+<p><strong>&lt;&lt;EOF是shell脚本中使用sqlplus的基础</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@bow ~]# cat &lt;&lt;A</span><br><span class="line">&gt; 11234</span><br><span class="line">&gt; 1234</span><br><span class="line">&gt; 1234</span><br><span class="line">&gt; 1253</span><br><span class="line">&gt; 1253</span><br><span class="line">&gt; A</span><br><span class="line">11234</span><br><span class="line">1234</span><br><span class="line">1234</span><br><span class="line">1253</span><br><span class="line">1253</span><br></pre></td></tr></table></figure>
+<p><strong>注意:EOF必须顶行写</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@bow ~]# cat &lt;&lt;EOF</span><br><span class="line">&gt; ASDF</span><br><span class="line">&gt; EOF</span><br><span class="line">&gt; ASDFASDF</span><br><span class="line">&gt; EOF</span><br><span class="line">ASDF</span><br><span class="line"> EOF</span><br><span class="line">ASDFASDF</span><br></pre></td></tr></table></figure>
+<h2 id="28-cut命令"><a href="#28-cut命令" class="headerlink" title="28.cut命令"></a>28.cut命令</h2><p><strong>cut 截取命令</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-f 参数,指定列</span><br><span class="line">-d 参数指定列和列之间的分隔符,默认的分隔符是\t(行向制表符)</span><br><span class="line">cut -f 1 1.txt #取1.txt文件中的第1列内容(列分隔符默认为\t)</span><br><span class="line">cut -f 2 1.txt #取1.txt文件中的第2列内容</span><br><span class="line">cut -f 1 -d &#x27;,&#x27; 3.txt #取3.txt文件中的第1列(列分隔符为,)</span><br><span class="line">cut -f 2 -d &#x27;,&#x27; 3.txt #取3.txt第2列</span><br></pre></td></tr></table></figure>
+<p><strong>wc -l linux常用命令.txt | cut -f 1 -d ’ ’ #取文件linux常用命令.txt的行数(分隔符是空格)</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@bow ~]# cut -f 1 -d &#x27;,&#x27; &lt;&lt;EOF</span><br><span class="line">&gt; A,B,C</span><br><span class="line">&gt; D,E,F</span><br><span class="line">&gt; EOF</span><br><span class="line">A</span><br><span class="line">D</span><br></pre></td></tr></table></figure>
+<h2 id="29-printf命令"><a href="#29-printf命令" class="headerlink" title="29.printf命令"></a>29.printf命令</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%ns　　输出字符串，n是数字，指代输出几个字符</span><br><span class="line">%ni　　输出整数。n是数字，指代输出几个数字</span><br><span class="line">%m.nf　　位数和小数位数。例如：%8.2f 代表输出8位数，其中2位是小数，6位是整数</span><br></pre></td></tr></table></figure>
+<p><strong>printf 格式字符串</strong> <strong>内容</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[root@bow ~]# printf &#x27;%s,%s,%s\n&#x27; abc def ghj klj klo qer #一行单词第三个打印成一行,单词和单词之间用逗号隔开</span><br><span class="line">abc,def,ghj</span><br><span class="line">klj,klo,qer</span><br><span class="line">[root@bow ~]# printf &#x27;%s %s\n&#x27; $(cat 4.txt) #将文件4.txt中的一行内容中的单词划分为两个一组打印 cat 合作查看文件内容 $(cat 4.txt)表示取cat命令的执行结果</span><br><span class="line">empno ename</span><br><span class="line">job sal</span><br><span class="line">comm depno</span><br><span class="line">5.txt内容</span><br><span class="line">A B C D E</span><br><span class="line">F G H</span><br><span class="line">[root@bow ~]# printf &#x27;%s,%s\n&#x27; $(cat 5.txt)</span><br><span class="line">A,B</span><br><span class="line">C,D</span><br><span class="line">E,F</span><br><span class="line">G,H</span><br><span class="line">[root@bow ~]# printf &#x27;%5.2f\n&#x27; 12.1 #%5.2f表示输出一个小数,数的长度是5,其中有两个小数</span><br><span class="line">12.10</span><br><span class="line">[root@bow ~]# printf &#x27;%5.2f\n&#x27; 121234.116134 #如果输出的值最大长度超出5,那么整数部分不变量,小数部分会按照四舍五入的方法保存两位</span><br><span class="line">121234.12</span><br><span class="line">[root@bow ~]# printf &#x27;%i\n&#x27; 1234.5678  #%i只取数字的整数部分</span><br><span class="line">-bash: printf: 1234.5678: 无效数字</span><br><span class="line">1234</span><br></pre></td></tr></table></figure>
+<h2 id="30-awk命令"><a href="#30-awk命令" class="headerlink" title="30.awk命令"></a>30.awk命令</h2><p><strong>awk 命令字符串</strong> <strong>要处理的内容</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@bow ~]# awk &#x27;&#123;printf $1 &quot;\n&quot;&#125;&#x27; 1.txt #printf 打印 $n 表示取第几列 $1表示取第1列 </span><br><span class="line">Hello</span><br><span class="line">smith</span><br><span class="line">tomcat</span><br></pre></td></tr></table></figure>
+<p><strong>awk ‘{print $2}’ 1.txt #取1.txt的第2列,print和printf功能相同是打印,比printf多一个换行功能</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@bow ~]# awk &#x27;&#123;printf $1 &quot;,&quot;&#125;&#x27; 1.txt</span><br><span class="line">Hello,smith,tomcat,[root@bow ~]#</span><br><span class="line">[root@bow ~]# awk &#x27;&#123;printf $1&#125;&#x27; 1.txt</span><br><span class="line">Hellosmithtomcat</span><br><span class="line">[root@bow ~]# awk &#x27;&#123;printf $1 &quot;\v&quot;&#125;&#x27; 1.txt</span><br><span class="line">Hello</span><br><span class="line">     smith</span><br><span class="line">          tomcat</span><br><span class="line">[root@bow ~]# awk &#x27;&#123;printf $1 &quot;,&quot;&#125;&#x27; 1.txt</span><br><span class="line">Hello,smith,tomcat,</span><br></pre></td></tr></table></figure>
+<h2 id="31-sed命令"><a href="#31-sed命令" class="headerlink" title="31.sed命令"></a>31.sed命令</h2><p><strong>sed 参数</strong> <strong>命令</strong> <strong>要处理的内容</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">-n　　一般sed命令会把所有数据都输出到屏幕。如果加入此选择，则只会把经过sed命令处理的行输出到屏幕。</span><br><span class="line">-e　　允许对输入数据应用多条sed命令编辑</span><br><span class="line">-i　　用sed的修改结果直接修改读取的数据的文件，而不是修改屏幕输出</span><br><span class="line">[root@bow ~]# sed &#x27;2p&#x27; 1.txt #查询第2行</span><br><span class="line">Hello world</span><br><span class="line">smith 18</span><br><span class="line">smith 18</span><br><span class="line">tomcat etl</span><br><span class="line">[root@bow ~]# sed -n &#x27;2p&#x27; 1.txt</span><br><span class="line">smith 18</span><br><span class="line">[root@bow ~]# sed -i &#x27;s/18/20/g&#x27; 1.txt 使用sed命令修改1.txt内容,将1.txt中18替换为20</span><br><span class="line">[root@bow ~]# cat 1.txt</span><br><span class="line">Hello world</span><br><span class="line">smith 20</span><br><span class="line">tomcat etl</span><br><span class="line">a\　　追加，在当前行后添加一行或多行。添加多行时除最后一行外，每行末尾需要用&quot;\&quot;代表数据未完结。</span><br><span class="line">d　　删除，删除指定的</span><br><span class="line">p　　打印，输出指定的行</span><br><span class="line">[root@bow ~]# sed -i &#x27;2a !&#x27; 1.txt #在第2行后面追加一行 !</span><br><span class="line">[root@bow ~]# cat 1.txt</span><br><span class="line">Hello world</span><br><span class="line">smith 20</span><br><span class="line">!</span><br><span class="line">tomcat etl</span><br><span class="line">[root@bow ~]# sed -i &#x27;3d&#x27; 1.txt #删除文件的第3行内容</span><br><span class="line">[root@bow ~]# cat 1.txt</span><br><span class="line">Hello world</span><br><span class="line">smith 20</span><br><span class="line">tomcat etl</span><br><span class="line">[root@bow ~]# vim 6.txt</span><br><span class="line">[root@bow ~]# cat 6.txt</span><br><span class="line">abcd/home/bow</span><br><span class="line">if ad</span><br><span class="line"> -e /home/bow</span><br><span class="line">abcd/home/bow</span><br><span class="line">if ad</span><br><span class="line"> -e /home/bow</span><br><span class="line">abcd/home/bow</span><br><span class="line">if ad</span><br><span class="line"> -e /home/bow</span><br><span class="line">#将6.txt文件中的/home/bow修改为/user/bw</span><br><span class="line">#注意:替换时,的符号是根据/来判断 s/原字符串/目标字符串/g 如果原字符串或新的字符串中有/时,需要使用\来转义</span><br><span class="line"># 错误写法:s//home/bow//user/bw/g 正确写法 s/\/home\/bow/\/user\/bw/g</span><br><span class="line">[root@bow ~]# sed -i &#x27;s/\/home\/bow/\/user\/bw/g&#x27; 6.txt</span><br><span class="line">[root@bow ~]# cat 6.txt</span><br><span class="line">abcd/user/bw</span><br><span class="line">if ad</span><br><span class="line"> -e /user/bw</span><br><span class="line">abcd/user/bw</span><br><span class="line">if ad</span><br><span class="line"> -e /user/bw</span><br><span class="line">abcd/user/bw</span><br><span class="line">if ad</span><br><span class="line"> -e /user/bw</span><br></pre></td></tr></table></figure>
+<p><strong>注意:linux中字符串的下标是从0开始的</strong></p>
+<h2 id="32-service命令"><a href="#32-service命令" class="headerlink" title="32.service命令"></a>32.service命令</h2><p><strong>service服务命令</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ervice 服务名 [命令]</span><br><span class="line">命令:enable|disable|start|stop|restart|status</span><br><span class="line">start:启动服务</span><br><span class="line">stop:关闭服务</span><br><span class="line">restart:重启服务</span><br><span class="line">status:查看服务状态</span><br><span class="line">service network start #遍历网络</span><br><span class="line">service network stop #关闭网络</span><br><span class="line">service network restart #重启网络</span><br><span class="line">service network status #查看网络状态</span><br><span class="line">service iptables start #centos6及6以下版本,启动防火墙的命令</span><br><span class="line">service iptables stop #centos6及6以下版本,关闭防火墙(注意,关闭防火墙,只是临时关闭,下次重启之后防火墙依然会启动)</span><br><span class="line">service iptables restart #重启防火墙</span><br><span class="line">service mysqld start #启动mysql数据库</span><br><span class="line">service mysqld restart #启动mysql数据库</span><br><span class="line">service mysqld stop #关闭mysql数据库</span><br></pre></td></tr></table></figure>
+<h2 id="33-chkconfig命令"><a href="#33-chkconfig命令" class="headerlink" title="33.chkconfig命令"></a>33.chkconfig命令</h2><p><strong>chkconfig命令检查，设置系统的各种服务</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chkconfig 服务名 on|off #on表示打开服务 off表示关闭服务 通过chkconfig设置的服务是永久生效</span><br><span class="line">centos6及以下版本永久关闭或打开防火墙</span><br><span class="line">chkconfig iptables on #打开防火墙</span><br><span class="line">chkconfig iptables off #永久地关闭防火墙</span><br></pre></td></tr></table></figure>
+<p><strong>防火墙:</strong></p>
+<p><strong>centos7以上:</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld #启动防火墙</span><br><span class="line">systemctl stop firewalld #关闭防火墙(临时关闭)</span><br><span class="line">systemctl status firewalld #查看防火墙状态</span><br><span class="line">systemctl disable firewalld #永久关闭防火墙</span><br><span class="line">systemctl enable firewalld #打开防火墙(不是启动防火墙)</span><br><span class="line">通过firewall-cmd来配置防火墙</span><br></pre></td></tr></table></figure>
+<p><strong>centos6及以下:</strong></p>
+<p><strong>防火墙配置文件:/etc/iptables,这个文件可以详细的配置防火墙,如果没有/etc/iptables文件可以使用iptables save可以生成该文件</strong></p>
+<p><strong>iptables 命令配置防火墙</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service iptables start #centos6及6以下版本,启动防火墙的命令</span><br><span class="line">     service iptables stop #centos6及6以下版本,关闭防火墙(注意,关闭防火墙,只是临时关闭,下次重启之后防火墙依然会启动)</span><br><span class="line">     service iptables restart #重启防火墙</span><br></pre></td></tr></table></figure>
+<p><strong>环境变量配置文件</strong></p>
+<p><strong>/etc/profile是linux系统上配置系统环境变量的一个文件(针对所有用户的配置)</strong><br><strong>用户根目录下的.bash_profile:是用户环境变量的配置(针对当前用户有效)</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su - 用户名 #切换用户时,会加载用户根目录下的.bash_profile环境变量配置文件</span><br><span class="line">su 用户名 #不会加载.bash_profile</span><br></pre></td></tr></table></figure>
+<p><strong>网络配置文件</strong></p>
+<p>网卡配置文件目录:/etc/sysconfig/network-scripts</p>
+<p>网卡配置文件名都是以ifcfg-开头,其中ifcfg-lo是本地网卡,是不需要配置的</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/network-scripts/ifcfg-enp0s3</span><br><span class="line">#网卡类型</span><br><span class="line">TYPE=&quot;Ethernet&quot;</span><br><span class="line">#协议 dhcp表示:ip地址是自动分配的,static表示静态ip(手动配置ip地址),none表示没有协议(也是需要手动配置ip地址)</span><br><span class="line">BOOTPROTO=&quot;dhcp&quot;</span><br><span class="line">DEFROUTE=&quot;yes&quot;</span><br><span class="line">#网卡名称</span><br><span class="line">NAME=&quot;enp0s3&quot;</span><br><span class="line">UUID=&quot;deed3fd2-bd67-459b-8a49-ef0dd6e575a2&quot;</span><br><span class="line">DEVICE=&quot;enp0s3&quot;</span><br><span class="line">#配置网卡是否随机启动,yes:表示随机启动,no:表示需要手动启动</span><br><span class="line">ONBOOT=&quot;yes&quot;</span><br><span class="line">#配置静态ip,BOOTPROTO必须是static或none</span><br><span class="line">#ip地址配置</span><br><span class="line">IPADDR=192.168.1.106</span><br><span class="line">#配置子网掩码</span><br><span class="line">NETMASTER=255.255.255.0</span><br><span class="line">#配置网关</span><br><span class="line">GATEWAY=192.168.1.1</span><br><span class="line">#配置dns:域名解析服务器可以配置多个</span><br><span class="line">DNS1=192.168.1.1</span><br><span class="line">DNS2=192.168.5.1</span><br></pre></td></tr></table></figure>
+<p><strong>修改完网卡文件之后,*重启网络*即可</strong></p>
+<h2 id="34-sudo命令"><a href="#34-sudo命令" class="headerlink" title="34.sudo命令"></a>34.sudo命令</h2><p><strong>sudo命令,它在非root用户下,去调用一些root用户的命令,或者修改一些文件</strong><br><strong>sudo命令是需要配置的,sudo的配置文件是/etc/sudoers</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#给bow用户配置sudo权限</span><br><span class="line">[root@bow ~]# vim /etc/sudoers</span><br><span class="line">##</span><br><span class="line">## Allow root to run any commands anywhere </span><br><span class="line">root ALL=(ALL) ALL</span><br><span class="line">#给bow用户设置sudo命令权限</span><br><span class="line">bow ALL=(ALL) ALL</span><br></pre></td></tr></table></figure>
+<p><strong>sudo命令的使用:</strong></p>
+<p><strong>sudo 命令</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@bow ~]# su - bow</span><br><span class="line">上一次登录：四 3月 26 07:30:53 CST 2020pts/0 上</span><br><span class="line">[bow@bow ~]$ sudo vim /etc/profile</span><br></pre></td></tr></table></figure>
+<h2 id="35-ping命令"><a href="#35-ping命令" class="headerlink" title="35.ping命令"></a>35.ping命令</h2><p><strong>ping命令查看网络连通性的命令和windows上的功能一样</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping ip（0.0.0.100）</span><br></pre></td></tr></table></figure>
+<h2 id="36-ifconfig命令"><a href="#36-ifconfig命令" class="headerlink" title="36.ifconfig命令"></a>36.ifconfig命令</h2><p><strong>ifconfig命令属于net-tools软件包,使用前需要安装net-tools</strong></p>
+<p><strong>net-tools的安装:</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install net-tools</span><br><span class="line">ifconfig查看ip地址</span><br></pre></td></tr></table></figure>
+<h2 id="37-netstat命令"><a href="#37-netstat命令" class="headerlink" title="37.netstat命令"></a>37.netstat命令</h2><p><strong>netstat命令也属于net-tools软件包</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tulp | grep 1521 #查看oracle监听器程序是否正常启动</span><br></pre></td></tr></table></figure>
+<h2 id="38-rpm命令"><a href="#38-rpm命令" class="headerlink" title="38.rpm命令"></a>38.rpm命令</h2><p><strong>rpm是linux上的安装命令，用来安装.rpm格式的安装包</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh .rpm文件的路径 #表示安装软件包</span><br><span class="line"> </span><br><span class="line">rpm -qa #查看已安装的软件 </span><br><span class="line">rpm -qa | grep mysql #查看已经安装的mysql软件包</span><br><span class="line"> </span><br><span class="line">rpm -e --nodeps 安装包名 #卸载软件包 -e表示卸载 --nodeps表示不理会的依赖关系</span><br></pre></td></tr></table></figure>
+<h2 id="39联系方式"><a href="#39联系方式" class="headerlink" title="39联系方式"></a>39联系方式</h2><p>qq：2061302791</p>
+<p>微信：xie2061302791</p>
+<p>电话：15284524485</p>
+<p>个人网站：<a href="https://xieyingpeng.github.io/">https://xieyingpeng.github.io</a></p>
+<p>Github：<a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/">https://github.com/xieyingpeng/</a></p>
+<p>博客园：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Xieyingpengz">https://www.cnblogs.com/Xieyingpengz</a></p>
+<p>知乎：<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nan-qiao-12-73">https://www.zhihu.com/people/nan-qiao-12-73</a></p>
+<p>gitee：<a target="_blank" rel="noopener" href="https://gitee.com/xie-yingpeng/project-1.git">https://gitee.com/xie-yingpeng/project-1.git</a></p>
+<p>bilibili：<a target="_blank" rel="noopener" href="https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798">https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798</a></p>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8"><span class="toc-number">1.</span> <span class="toc-text">Linux常用命令大全</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text">1.启动网络命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-pwd%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">2.pwd命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-ls%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text">3.ls命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-cd%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.</span> <span class="toc-text">4.cd命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-mkdir%E5%91%BD%E4%BB%A4"><span class="toc-number">1.5.</span> <span class="toc-text">5.mkdir命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-rmdir%E5%91%BD%E4%BB%A4"><span class="toc-number">1.6.</span> <span class="toc-text">6.rmdir命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-touch%E5%91%BD%E4%BB%A4"><span class="toc-number">1.7.</span> <span class="toc-text">7.touch命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-rm%E5%91%BD%E4%BB%A4"><span class="toc-number">1.8.</span> <span class="toc-text">8.rm命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-echo%E5%91%BD%E4%BB%A4"><span class="toc-number">1.9.</span> <span class="toc-text">9.echo命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-gt-%E5%92%8C-gt-gt-%E5%91%BD%E4%BB%A4"><span class="toc-number">1.10.</span> <span class="toc-text">10.&gt;和&gt;&gt;命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4"><span class="toc-number">1.11.</span> <span class="toc-text">11.文件查看命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91%E5%91%BD%E4%BB%A4"><span class="toc-number">1.12.</span> <span class="toc-text">12.文件编辑命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-cp%E5%91%BD%E4%BB%A4"><span class="toc-number">1.13.</span> <span class="toc-text">13.cp命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-scp%E5%91%BD%E4%BB%A4"><span class="toc-number">1.14.</span> <span class="toc-text">14.scp命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-mv%E5%91%BD%E4%BB%A4"><span class="toc-number">1.15.</span> <span class="toc-text">15.mv命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-man%E5%91%BD%E4%BB%A4"><span class="toc-number">1.16.</span> <span class="toc-text">16.man命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-free%E5%91%BD%E4%BB%A4"><span class="toc-number">1.17.</span> <span class="toc-text">17.free命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18df%E5%91%BD%E4%BB%A4"><span class="toc-number">1.18.</span> <span class="toc-text">18df命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19wc%E5%91%BD%E4%BB%A4"><span class="toc-number">1.19.</span> <span class="toc-text">19wc命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-ps%E5%91%BD%E4%BB%A4"><span class="toc-number">1.20.</span> <span class="toc-text">20.ps命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-kill%E5%91%BD%E4%BB%A4"><span class="toc-number">1.21.</span> <span class="toc-text">21.kill命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4"><span class="toc-number">1.22.</span> <span class="toc-text">22.用户和权限命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-chmod-%E8%B5%8B%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4"><span class="toc-number">1.23.</span> <span class="toc-text">23.chmod 赋权限命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4"><span class="toc-number">1.24.</span> <span class="toc-text">24.查找命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#25-%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">1.25.</span> <span class="toc-text">25.压缩命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#26-source%E5%91%BD%E4%BB%A4"><span class="toc-number">1.26.</span> <span class="toc-text">26.source命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#27-export%E5%91%BD%E4%BB%A4"><span class="toc-number">1.27.</span> <span class="toc-text">27.export命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#28-cut%E5%91%BD%E4%BB%A4"><span class="toc-number">1.28.</span> <span class="toc-text">28.cut命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#29-printf%E5%91%BD%E4%BB%A4"><span class="toc-number">1.29.</span> <span class="toc-text">29.printf命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#30-awk%E5%91%BD%E4%BB%A4"><span class="toc-number">1.30.</span> <span class="toc-text">30.awk命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#31-sed%E5%91%BD%E4%BB%A4"><span class="toc-number">1.31.</span> <span class="toc-text">31.sed命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-service%E5%91%BD%E4%BB%A4"><span class="toc-number">1.32.</span> <span class="toc-text">32.service命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-chkconfig%E5%91%BD%E4%BB%A4"><span class="toc-number">1.33.</span> <span class="toc-text">33.chkconfig命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#34-sudo%E5%91%BD%E4%BB%A4"><span class="toc-number">1.34.</span> <span class="toc-text">34.sudo命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#35-ping%E5%91%BD%E4%BB%A4"><span class="toc-number">1.35.</span> <span class="toc-text">35.ping命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#36-ifconfig%E5%91%BD%E4%BB%A4"><span class="toc-number">1.36.</span> <span class="toc-text">36.ifconfig命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#37-netstat%E5%91%BD%E4%BB%A4"><span class="toc-number">1.37.</span> <span class="toc-text">37.netstat命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#38-rpm%E5%91%BD%E4%BB%A4"><span class="toc-number">1.38.</span> <span class="toc-text">38.rpm命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#39%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">1.39.</span> <span class="toc-text">39联系方式</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&text=Linux操作系统命令大全"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&title=Linux操作系统命令大全"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&is_video=false&description=Linux操作系统命令大全"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Linux操作系统命令大全&body=Check out this article: http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&title=Linux操作系统命令大全"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&title=Linux操作系统命令大全"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&title=Linux操作系统命令大全"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&title=Linux操作系统命令大全"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/&name=Linux操作系统命令大全&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2021 лӦ��
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>
