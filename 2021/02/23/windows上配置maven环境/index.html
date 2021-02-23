@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="windows上配置maven环境一，mavne的介绍1：Maven项目对象模型（POM）是一个项目管理工具软件，可以通过简短的信息描述来管理项目的构造，报告和文档。除了具有构建程序的功能外，Maven还提供了高级项目管理工具。由于Maven的默认构建规则具有很高的可重用性，因此通常可以使用两到三行Maven构建脚本来构建简单的项目。由于Maven的面向项目的方法，许多ApacheJakarta项">
+<meta property="og:type" content="article">
+<meta property="og:title" content="windows上配置maven环境">
+<meta property="og:url" content="http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:site_name" content="xieyingpengblogs">
+<meta property="og:description" content="windows上配置maven环境一，mavne的介绍1：Maven项目对象模型（POM）是一个项目管理工具软件，可以通过简短的信息描述来管理项目的构造，报告和文档。除了具有构建程序的功能外，Maven还提供了高级项目管理工具。由于Maven的默认构建规则具有很高的可重用性，因此通常可以使用两到三行Maven构建脚本来构建简单的项目。由于Maven的面向项目的方法，许多ApacheJakarta项">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128200729303-661493591.jpg">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128200742722-469633397.jpg">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128195638250-1006241220.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128195650758-2059261699.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128195716495-522338335.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128195730261-479850396.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128195828663-532388098.png">
+<meta property="article:published_time" content="2021-02-23T11:47:17.000Z">
+<meta property="article:modified_time" content="2021-02-23T11:48:42.608Z">
+<meta property="article:author" content="лӦ��">
+<meta property="article:tag" content="java html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128200729303-661493591.jpg">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>windows上配置maven环境</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">xieyingpengblogs</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2021/02/22/Liux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&text=windows上配置maven环境"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&title=windows上配置maven环境"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&is_video=false&description=windows上配置maven环境"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=windows上配置maven环境&body=Check out this article: http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&title=windows上配置maven环境"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&title=windows上配置maven环境"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&title=windows上配置maven环境"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&title=windows上配置maven环境"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&name=windows上配置maven环境&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">windows上配置maven环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%EF%BC%8Cmavne%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">一，mavne的介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%9AMaven%E9%A1%B9%E7%9B%AE%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B%EF%BC%88POM%EF%BC%89%E6%98%AF%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E7%AE%80%E7%9F%AD%E7%9A%84%E4%BF%A1%E6%81%AF%E6%8F%8F%E8%BF%B0%E6%9D%A5%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E9%80%A0%EF%BC%8C%E6%8A%A5%E5%91%8A%E5%92%8C%E6%96%87%E6%A1%A3%E3%80%82"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">1：Maven项目对象模型（POM）是一个项目管理工具软件，可以通过简短的信息描述来管理项目的构造，报告和文档。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%9AMaven%E6%98%AF%E5%B9%B2%E4%BB%80%E4%B9%88%E7%94%A8"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">2：Maven是干什么用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%EF%BC%8C%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">二，配置步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%9A%E4%B8%8B%E8%BD%BDmaven%E7%9A%84%E5%8C%85%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%EF%BC%8C%E8%BF%99%E9%87%8C%E4%B8%BA%E4%BA%86%E6%96%B9%E4%BE%BF%EF%BC%8C%E6%88%91%E6%8A%8A%E5%B7%B2%E7%BB%8F%E4%B8%8B%E8%BD%BD%E5%A5%BD%E7%9A%84%E5%8C%85%E4%BC%A0%E5%88%B0%E4%BA%86%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8A%EF%BC%8C%E5%A4%A7%E5%AE%B6%E5%8F%AF%E4%BB%A5%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.2.1.</span> <span class="toc-text">1：下载maven的包，可以从官网下载，这里为了方便，我把已经下载好的包传到了百度网盘上，大家可以下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%9A%E5%9C%A8%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E2%80%9D%E4%B8%8A%E5%8F%B3%E9%94%AE%E5%B1%9E%E6%80%A7%EF%BC%8C%E7%82%B9%E5%87%BB%E9%AB%98%E7%BA%A7%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE%EF%BC%8C%E5%86%8D%E7%82%B9%E5%87%BB%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%EF%BC%8C%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">2：在“计算机”上右键属性，点击高级系统设置，再点击环境变量，如下图所示：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%EF%BC%9A%E9%80%89%E4%B8%AD%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F%E4%B8%AD%E7%9A%84path%EF%BC%8C%E7%82%B9%E5%87%BB%E6%96%B0%E5%BB%BA%EF%BC%88%E6%88%91%E7%9A%84%E6%98%AFwindowns%E7%B3%BB%E7%BB%9F%EF%BC%89%EF%BC%9A%E6%8A%8A%E5%88%9A%E5%88%9A%E5%A4%8D%E5%88%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E7%B2%98%E8%B4%B4%E5%8D%B3%E5%8F%AF"><span class="toc-number">1.2.3.</span> <span class="toc-text">3：选中系统变量中的path，点击新建（我的是windowns系统）：把刚刚复制的路径粘贴即可</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%EF%BC%9A%E6%A3%80%E6%9F%A5maven%E6%98%AF%E5%90%A6%E9%85%8D%E7%BD%AE%E6%AD%A3%E7%A1%AE%EF%BC%8C%E7%94%B5%E8%84%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E6%90%9C%E7%B4%A2%E6%A0%8F%E8%BE%93%E5%85%A5cmd%E5%9B%9E%E8%BD%A6%EF%BC%8C%E6%89%93%E5%BC%80%E5%91%BD%E4%BB%A4%E6%A1%86%E6%88%96%E8%80%85%E6%8C%89win-r%EF%BC%8C%E8%BE%93%E5%85%A5mvn-v%EF%BC%9A"><span class="toc-number">1.2.4.</span> <span class="toc-text">4：检查maven是否配置正确，电脑左下角搜索栏输入cmd回车，打开命令框或者按win+r，输入mvn -v：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">联系方式</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        windows上配置maven环境
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">xieyingpengblogs</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2021-02-23T11:47:17.000Z" itemprop="datePublished">2021-02-23</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="windows上配置maven环境"><a href="#windows上配置maven环境" class="headerlink" title="windows上配置maven环境"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Xieyingpeng/p/14341715.html">windows上配置maven环境</a></h1><h2 id="一，mavne的介绍"><a href="#一，mavne的介绍" class="headerlink" title="一，mavne的介绍"></a>一，mavne的介绍</h2><h4 id="1：Maven项目对象模型（POM）是一个项目管理工具软件，可以通过简短的信息描述来管理项目的构造，报告和文档。"><a href="#1：Maven项目对象模型（POM）是一个项目管理工具软件，可以通过简短的信息描述来管理项目的构造，报告和文档。" class="headerlink" title="1：Maven项目对象模型（POM）是一个项目管理工具软件，可以通过简短的信息描述来管理项目的构造，报告和文档。"></a>1：Maven项目对象模型（POM）是一个项目管理工具软件，可以通过简短的信息描述来管理项目的构造，报告和文档。</h4><p>除了具有构建程序的功能外，Maven还提供了高级项目管理工具。由于Maven的默认构建规则具有很高的可重用性，因此通常可以使用两到三行Maven构建脚本来构建简单的项目。由于Maven的面向项目的方法，许多ApacheJakarta项目在发布时都使用Maven，并且采用Maven的公司项目所占的比例持续增长。<br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128200729303-661493591.jpg" alt="img"></p>
+<p>Maven这个词来自意第绪语（犹太语），意思是知识的积累，最初是在JakataTurbine项目中使用，以简化施工过程。那时，有些项目（具有自己的Ant构建文件）只有很小的差异，并且JAR文件全部由CVS维护。因此，我希望有一种标准化的方式来构建项目，一种清晰的方式来定义项目的组成，一种简便的方式来发布项目信息以及一种简单的方式来在多个项目之间共享JAR。</p>
+<h4 id="2：Maven是干什么用"><a href="#2：Maven是干什么用" class="headerlink" title="2：Maven是干什么用"></a>2：Maven是干什么用</h4><ul>
+<li>功能一：<br>Maven主要用于解决导入依赖于Java类的jar和编译Java项目的主要问题。（最早手动导入jar，并使用Ant编译Java项目）<br>依赖的jar包由pom.xml文件中的dependency属性管理，并且jar包包含类文件和一些必要的资源文件。当然，它可以构建项目，管理依赖关系并生成简单的单元测试报告。<br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128200742722-469633397.jpg" alt="img"></li>
+<li>功能二：<br>例如，上一个项目导入了jar。它通过副本导入到项目中，并且jar之间存在依赖关系和冲突。Maven解决了这些问题，但是当互联网速度不佳时，这很烦人。使用专用服务器关系解决此问题。</li>
+<li>功能三：<br>Jar包管理，以防止jar之间的依赖关系冲突。在组之间建立私有服务。每个人都使用通用的maven配置文件，而不是手动下载jar。pom文件将自动管理下载的jar包。</li>
+<li>功能四：<br>Maven是基于项目对象模型的软件项目管理工具，可以通过一小段描述信息来管理项目的构造，报告和文档。Maven可以轻松地帮助您管理项目报告，生成站点，管理jar文件等。例如：项目开发中的第三方jar引用。在开发过程中，合作成员引用的jar版本可能会有所不同，并且同一jar的不同版本可能会重复引用。可以通过使用Maven关联jar来配置引用的jar的版本，以避免冲突。</li>
+</ul>
+<h2 id="二，配置步骤："><a href="#二，配置步骤：" class="headerlink" title="二，配置步骤："></a>二，配置步骤：</h2><h3 id="1：下载maven的包，可以从官网下载，这里为了方便，我把已经下载好的包传到了百度网盘上，大家可以下载"><a href="#1：下载maven的包，可以从官网下载，这里为了方便，我把已经下载好的包传到了百度网盘上，大家可以下载" class="headerlink" title="1：下载maven的包，可以从官网下载，这里为了方便，我把已经下载好的包传到了百度网盘上，大家可以下载"></a>1：下载maven的包，可以从官网下载，这里为了方便，我把已经下载好的包传到了百度网盘上，大家可以下载</h3><p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1XlxScroQebE4rWy5IDTdIA">https://pan.baidu.com/s/1XlxScroQebE4rWy5IDTdIA</a><br>提取码：5yu4<br>下载后解压，进入到bin目录下，然后复制bin目录，如下图所示：<br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128195638250-1006241220.png" alt="img"></p>
+<h3 id="2：在“计算机”上右键属性，点击高级系统设置，再点击环境变量，如下图所示："><a href="#2：在“计算机”上右键属性，点击高级系统设置，再点击环境变量，如下图所示：" class="headerlink" title="2：在“计算机”上右键属性，点击高级系统设置，再点击环境变量，如下图所示："></a>2：在“计算机”上右键属性，点击高级系统设置，再点击环境变量，如下图所示：</h3><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128195650758-2059261699.png" alt="img"></p>
+<p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128195716495-522338335.png" alt="img"></p>
+<h3 id="3：选中系统变量中的path，点击新建（我的是windowns系统）：把刚刚复制的路径粘贴即可"><a href="#3：选中系统变量中的path，点击新建（我的是windowns系统）：把刚刚复制的路径粘贴即可" class="headerlink" title="3：选中系统变量中的path，点击新建（我的是windowns系统）：把刚刚复制的路径粘贴即可"></a>3：选中系统变量中的path，点击新建（我的是windowns系统）：把刚刚复制的路径粘贴即可</h3><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128195730261-479850396.png" alt="img"></p>
+<p>上述完成后一直点击确定按钮即可。</p>
+<h3 id="4：检查maven是否配置正确，电脑左下角搜索栏输入cmd回车，打开命令框或者按win-r，输入mvn-v："><a href="#4：检查maven是否配置正确，电脑左下角搜索栏输入cmd回车，打开命令框或者按win-r，输入mvn-v：" class="headerlink" title="4：检查maven是否配置正确，电脑左下角搜索栏输入cmd回车，打开命令框或者按win+r，输入mvn -v："></a>4：检查maven是否配置正确，电脑左下角搜索栏输入cmd回车，打开命令框或者按win+r，输入mvn -v：</h3><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210128195828663-532388098.png" alt="img"></p>
+<p>出现上述的版本信息表示maven环境已经配置好了。</p>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><p>qq：2061302791</p>
+<p>微信：xie2061302791</p>
+<p>电话：15284524485</p>
+<p>个人网站：<a href="https://xieyingpeng.github.io/">https://xieyingpeng.github.io</a></p>
+<p>Github：<a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/">https://github.com/xieyingpeng/</a></p>
+<p>博客园：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Xieyingpengz">https://www.cnblogs.com/Xieyingpengz</a></p>
+<p>知乎：<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nan-qiao-12-73">https://www.zhihu.com/people/nan-qiao-12-73</a></p>
+<p>gitee：<a target="_blank" rel="noopener" href="https://gitee.com/xie-yingpeng/project-1.git">https://gitee.com/xie-yingpeng/project-1.git</a></p>
+<p>bilibili：<a target="_blank" rel="noopener" href="https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798">https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798</a></p>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">windows上配置maven环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%EF%BC%8Cmavne%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">一，mavne的介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%9AMaven%E9%A1%B9%E7%9B%AE%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B%EF%BC%88POM%EF%BC%89%E6%98%AF%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E7%AE%80%E7%9F%AD%E7%9A%84%E4%BF%A1%E6%81%AF%E6%8F%8F%E8%BF%B0%E6%9D%A5%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E9%80%A0%EF%BC%8C%E6%8A%A5%E5%91%8A%E5%92%8C%E6%96%87%E6%A1%A3%E3%80%82"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">1：Maven项目对象模型（POM）是一个项目管理工具软件，可以通过简短的信息描述来管理项目的构造，报告和文档。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%9AMaven%E6%98%AF%E5%B9%B2%E4%BB%80%E4%B9%88%E7%94%A8"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">2：Maven是干什么用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%EF%BC%8C%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">二，配置步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%9A%E4%B8%8B%E8%BD%BDmaven%E7%9A%84%E5%8C%85%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%EF%BC%8C%E8%BF%99%E9%87%8C%E4%B8%BA%E4%BA%86%E6%96%B9%E4%BE%BF%EF%BC%8C%E6%88%91%E6%8A%8A%E5%B7%B2%E7%BB%8F%E4%B8%8B%E8%BD%BD%E5%A5%BD%E7%9A%84%E5%8C%85%E4%BC%A0%E5%88%B0%E4%BA%86%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8A%EF%BC%8C%E5%A4%A7%E5%AE%B6%E5%8F%AF%E4%BB%A5%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.2.1.</span> <span class="toc-text">1：下载maven的包，可以从官网下载，这里为了方便，我把已经下载好的包传到了百度网盘上，大家可以下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%9A%E5%9C%A8%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E2%80%9D%E4%B8%8A%E5%8F%B3%E9%94%AE%E5%B1%9E%E6%80%A7%EF%BC%8C%E7%82%B9%E5%87%BB%E9%AB%98%E7%BA%A7%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE%EF%BC%8C%E5%86%8D%E7%82%B9%E5%87%BB%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%EF%BC%8C%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">2：在“计算机”上右键属性，点击高级系统设置，再点击环境变量，如下图所示：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%EF%BC%9A%E9%80%89%E4%B8%AD%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F%E4%B8%AD%E7%9A%84path%EF%BC%8C%E7%82%B9%E5%87%BB%E6%96%B0%E5%BB%BA%EF%BC%88%E6%88%91%E7%9A%84%E6%98%AFwindowns%E7%B3%BB%E7%BB%9F%EF%BC%89%EF%BC%9A%E6%8A%8A%E5%88%9A%E5%88%9A%E5%A4%8D%E5%88%B6%E7%9A%84%E8%B7%AF%E5%BE%84%E7%B2%98%E8%B4%B4%E5%8D%B3%E5%8F%AF"><span class="toc-number">1.2.3.</span> <span class="toc-text">3：选中系统变量中的path，点击新建（我的是windowns系统）：把刚刚复制的路径粘贴即可</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%EF%BC%9A%E6%A3%80%E6%9F%A5maven%E6%98%AF%E5%90%A6%E9%85%8D%E7%BD%AE%E6%AD%A3%E7%A1%AE%EF%BC%8C%E7%94%B5%E8%84%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E6%90%9C%E7%B4%A2%E6%A0%8F%E8%BE%93%E5%85%A5cmd%E5%9B%9E%E8%BD%A6%EF%BC%8C%E6%89%93%E5%BC%80%E5%91%BD%E4%BB%A4%E6%A1%86%E6%88%96%E8%80%85%E6%8C%89win-r%EF%BC%8C%E8%BE%93%E5%85%A5mvn-v%EF%BC%9A"><span class="toc-number">1.2.4.</span> <span class="toc-text">4：检查maven是否配置正确，电脑左下角搜索栏输入cmd回车，打开命令框或者按win+r，输入mvn -v：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">联系方式</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&text=windows上配置maven环境"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&title=windows上配置maven环境"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&is_video=false&description=windows上配置maven环境"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=windows上配置maven环境&body=Check out this article: http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&title=windows上配置maven环境"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&title=windows上配置maven环境"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&title=windows上配置maven环境"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&title=windows上配置maven环境"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/&name=windows上配置maven环境&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2021 лӦ��
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>
