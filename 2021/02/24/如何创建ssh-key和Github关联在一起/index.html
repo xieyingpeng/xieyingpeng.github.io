@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="如何创建ssh key使电脑和Github关联在一起一.目的：首先要在本地创建一个ssh key 这个的目的就是你现在需要在你电脑上获得一个密匙，就是咱们平时的验证码一样的东西，获取之后，在你的GitHub账号里边输入之后，你的电脑就和你的GitHub账号联系在一起了，这样以后就可以十分方便的通过Git bash 随时上传你的代码。下边介绍一下如果获得这个钥匙，又是如何输入到你的GitHub里边的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何创建ssh key和Github关联在一起">
+<meta property="og:url" content="http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/index.html">
+<meta property="og:site_name" content="xieyingpengblogs">
+<meta property="og:description" content="如何创建ssh key使电脑和Github关联在一起一.目的：首先要在本地创建一个ssh key 这个的目的就是你现在需要在你电脑上获得一个密匙，就是咱们平时的验证码一样的东西，获取之后，在你的GitHub账号里边输入之后，你的电脑就和你的GitHub账号联系在一起了，这样以后就可以十分方便的通过Git bash 随时上传你的代码。下边介绍一下如果获得这个钥匙，又是如何输入到你的GitHub里边的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126184508879-1877564010.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126184615483-1942317961.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126185105590-1754864144.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126185130183-645063181.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126185235076-271282444.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126185138291-896007394.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126185152001-1093708321.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126185636871-1529716291.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126185804004-1135035789.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126190023015-1351854542.png">
+<meta property="article:published_time" content="2021-02-24T11:39:37.000Z">
+<meta property="article:modified_time" content="2021-02-24T11:40:25.921Z">
+<meta property="article:author" content="лӦ��">
+<meta property="article:tag" content="java html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126184508879-1877564010.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>如何创建ssh key和Github关联在一起</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">xieyingpengblogs</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2021/02/23/windows%E4%B8%8A%E9%85%8D%E7%BD%AEmaven%E7%8E%AF%E5%A2%83/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&text=如何创建ssh key和Github关联在一起"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&title=如何创建ssh key和Github关联在一起"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&is_video=false&description=如何创建ssh key和Github关联在一起"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=如何创建ssh key和Github关联在一起&body=Check out this article: http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&title=如何创建ssh key和Github关联在一起"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&title=如何创建ssh key和Github关联在一起"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&title=如何创建ssh key和Github关联在一起"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&title=如何创建ssh key和Github关联在一起"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&name=如何创建ssh key和Github关联在一起&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E4%BD%BF%E7%94%B5%E8%84%91%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7"><span class="toc-number">1.</span> <span class="toc-text">如何创建ssh key使电脑和Github关联在一起</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E7%9B%AE%E7%9A%84%EF%BC%9A"><span class="toc-number">1.0.1.</span> <span class="toc-text">一.目的：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%EF%BC%8C%E7%99%BB%E5%BD%95github%E8%B4%A6%E5%8F%B7%E6%B7%BB%E5%8A%A0ssh%E7%A7%98%E9%92%A5"><span class="toc-number">1.0.2.</span> <span class="toc-text">二，登录github账号添加ssh秘钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E9%AA%8C%E6%98%AF%E5%90%A6%E7%BB%91%E5%AE%9A"><span class="toc-number">1.0.3.</span> <span class="toc-text">经验是否绑定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">个人联系方式:</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        如何创建ssh key和Github关联在一起
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">xieyingpengblogs</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2021-02-24T11:39:37.000Z" itemprop="datePublished">2021-02-24</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="如何创建ssh-key使电脑和Github关联在一起"><a href="#如何创建ssh-key使电脑和Github关联在一起" class="headerlink" title="如何创建ssh key使电脑和Github关联在一起"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Xieyingpeng/p/14331994.html">如何创建ssh key使电脑和Github关联在一起</a></h1><h3 id="一-目的："><a href="#一-目的：" class="headerlink" title="一.目的："></a>一.目的：</h3><p>首先要在本地创建一个ssh key 这个的目的就是你现在需要在你电脑上获得一个密匙，就是咱们平时的验证码一样的东西，获取之后，在你的GitHub账号里边输入之后，你的电脑就和你的GitHub账号联系在一起了，这样以后就可以十分方便的通过Git bash 随时上传你的代码。下边介绍一下如果获得这个钥匙，又是如何输入到你的GitHub里边的呢。<br>开始获取属于你自己的密匙。在git bash中所有功能都是通过简单的一些代码来实现的。获取密匙的时候需要输入：$ ssh-keygen-t rsa-C “<a href="mailto:&#121;&#x6f;&#117;&#x72;&#x5f;&#x65;&#109;&#x61;&#x69;&#x6c;&#64;&#121;&#111;&#117;&#114;&#x65;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;">&#121;&#x6f;&#117;&#x72;&#x5f;&#x65;&#109;&#x61;&#x69;&#x6c;&#64;&#121;&#111;&#117;&#114;&#x65;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;</a>“需要输入这个代码，引号内需要改成你在注册GitHub的时候绑定的邮箱账号。之后会有一些简单的让你确认的操作，之后让你会提示操作路径、密码等等，一般情况下就直接按回车一路过就可以。<br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126184508879-1877564010.png" alt="img"><br>如果之后你出现了这个界面之后，就说明你的密匙已经成功创建了。现在你就需要去他刚刚显示的存储位置打开它，在.ssh这个文件夹中，打开id_rsa的时候需要用记事本的方式打开，把其中的内容复制出来。<br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126184615483-1942317961.png" alt="img"></p>
+<h3 id="二，登录github账号添加ssh秘钥"><a href="#二，登录github账号添加ssh秘钥" class="headerlink" title="二，登录github账号添加ssh秘钥"></a>二，登录github账号添加ssh秘钥</h3><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126185105590-1754864144.png" alt="img"><br>找到设置settin<br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126185130183-645063181.png" alt="img"><br>然后点击ssh<br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126185235076-271282444.png" alt="img"><br>然后点击new<br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126185138291-896007394.png" alt="img"><br>填写标题名称（随便写）,把复制秘钥粘贴即可<br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126185152001-1093708321.png" alt="img"></p>
+<h3 id="经验是否绑定"><a href="#经验是否绑定" class="headerlink" title="经验是否绑定"></a>经验是否绑定</h3><p>回到终端输入ssh -T <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#109;</a> 然后输入yes 如果出现警告（虽然也不影响提交 但是感觉不舒服 所以我们解决一下）<br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126185636871-1529716291.png" alt="img"><br>当执行 git pull 出现警告 Warning: Permanently added ‘github.com,52.74.223.119’ (RSA) to the list of known hosts. 时,在文件夹 $HOME/.ssh/ 下新建一个文件 config，并写入语句 LogLevel=quiet，保存后退出。再次执行 git pull便会发现已经不再显示上述警告。<br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126185804004-1135035789.png" alt="img"><br><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210126190023015-1351854542.png" alt="img"></p>
+<h2 id="个人联系方式"><a href="#个人联系方式" class="headerlink" title="个人联系方式:"></a>个人联系方式:</h2><ul>
+<li>qq：2061302791</li>
+<li>微信：xie2061302791</li>
+<li>电话：15284524485</li>
+<li>个人网站：<a target="_blank" rel="noopener" href="https://xieyingpeng.mysxl.cn/">https://xieyingpeng.mysxl.cn/</a></li>
+<li>Github：<a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/">https://github.com/xieyingpeng/</a></li>
+<li>博客园：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Xieyingpengz">https://www.cnblogs.com/Xieyingpengz</a></li>
+<li>知乎：<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nan-qiao-12-73">https://www.zhihu.com/people/nan-qiao-12-73</a></li>
+<li>gitee：<a target="_blank" rel="noopener" href="https://gitee.com/xie-yingpeng/project-1.git">https://gitee.com/xie-yingpeng/project-1.git</a></li>
+<li>bilibili：<a target="_blank" rel="noopener" href="https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798">https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798</a></li>
+</ul>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E4%BD%BF%E7%94%B5%E8%84%91%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7"><span class="toc-number">1.</span> <span class="toc-text">如何创建ssh key使电脑和Github关联在一起</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E7%9B%AE%E7%9A%84%EF%BC%9A"><span class="toc-number">1.0.1.</span> <span class="toc-text">一.目的：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%EF%BC%8C%E7%99%BB%E5%BD%95github%E8%B4%A6%E5%8F%B7%E6%B7%BB%E5%8A%A0ssh%E7%A7%98%E9%92%A5"><span class="toc-number">1.0.2.</span> <span class="toc-text">二，登录github账号添加ssh秘钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E9%AA%8C%E6%98%AF%E5%90%A6%E7%BB%91%E5%AE%9A"><span class="toc-number">1.0.3.</span> <span class="toc-text">经验是否绑定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">个人联系方式:</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&text=如何创建ssh key和Github关联在一起"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&title=如何创建ssh key和Github关联在一起"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&is_video=false&description=如何创建ssh key和Github关联在一起"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=如何创建ssh key和Github关联在一起&body=Check out this article: http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&title=如何创建ssh key和Github关联在一起"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&title=如何创建ssh key和Github关联在一起"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&title=如何创建ssh key和Github关联在一起"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&title=如何创建ssh key和Github关联在一起"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/&name=如何创建ssh key和Github关联在一起&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2021 лӦ��
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>
