@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="eclipse如何安装配置tomcat一，关于tomcat的介绍 Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。由于有了Sun 的参与和支持，最新的Servlet 和JSP 规范总是能在Tomcat 中得到体现，Tomcat 5支持最新的Servlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="eclipse如何配置tomcat">
+<meta property="og:url" content="http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/index.html">
+<meta property="og:site_name" content="xieyingpengblogs">
+<meta property="og:description" content="eclipse如何安装配置tomcat一，关于tomcat的介绍 Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。由于有了Sun 的参与和支持，最新的Servlet 和JSP 规范总是能在Tomcat 中得到体现，Tomcat 5支持最新的Servlet">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210129162703627-137507694.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210129162843333-1165386797.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210129162900532-288623008.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210129162945252-738369986.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210129163003247-1401546307.png">
+<meta property="og:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210129163009617-1638661458.png">
+<meta property="article:published_time" content="2021-02-25T14:15:03.000Z">
+<meta property="article:modified_time" content="2021-02-25T14:15:50.311Z">
+<meta property="article:author" content="лӦ��">
+<meta property="article:tag" content="java html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210129162703627-137507694.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>eclipse如何配置tomcat</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">xieyingpengblogs</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2021/02/24/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAssh-key%E5%92%8CGithub%E5%85%B3%E8%81%94%E5%9C%A8%E4%B8%80%E8%B5%B7/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&text=eclipse如何配置tomcat"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&title=eclipse如何配置tomcat"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&is_video=false&description=eclipse如何配置tomcat"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=eclipse如何配置tomcat&body=Check out this article: http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&title=eclipse如何配置tomcat"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&title=eclipse如何配置tomcat"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&title=eclipse如何配置tomcat"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&title=eclipse如何配置tomcat"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&name=eclipse如何配置tomcat&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#eclipse%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEtomcat"><span class="toc-number">1.</span> <span class="toc-text">eclipse如何安装配置tomcat</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%EF%BC%8C%E5%85%B3%E4%BA%8Etomcat%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">一，关于tomcat的介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%EF%BC%8C%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">二，配置步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BDtomcat%EF%BC%8C%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%EF%BC%8C%E5%9C%B0%E5%9D%80%EF%BC%9Ahttp-tomcat-apache-org-download-70-cgi"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">1.下载tomcat，从官网下载，地址：http:&#x2F;&#x2F;tomcat.apache.org&#x2F;download-70.cgi</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B0%86%E4%B8%8B%E8%BD%BD%E4%B8%8B%E6%9D%A5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%8C%85%E8%A7%A3%E5%8E%8B%EF%BC%8C%E6%94%BE%E5%9C%A8%E8%87%AA%E5%B7%B1%E6%83%B3%E6%94%BE%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%EF%BC%8C%E8%BF%99%E4%B8%AA%E8%87%AA%E5%B7%B1%E9%9A%8F%E6%84%8F%E6%94%BE%E3%80%82"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">2.将下载下来的压缩包解压，放在自己想放的文件夹下，这个自己随意放。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%89%93%E5%BC%80eclipse%EF%BC%8C%E9%80%89%E6%8B%A9window-gt-preferences%EF%BC%9A"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">3.打开eclipse，选择window-&gt;preferences：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E7%82%B9%E5%87%BBserver%EF%BC%8C%E7%82%B9%E5%BC%80%E5%90%8E%E7%82%B9%E5%87%BB%E6%9C%80%E4%B8%8B%E9%9D%A2runtime-environment%EF%BC%9A"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">4.点击server，点开后点击最下面runtime environment：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E7%82%B9%E5%87%BBadd%E6%8C%89%E9%92%AE%EF%BC%8C%E5%9C%A8%E5%BC%B9%E5%87%BA%E7%9A%84%E7%95%8C%E9%9D%A2%E9%87%8C%E9%80%89%E6%8B%A9%E8%87%AA%E5%B7%B1%E5%88%9A%E6%89%8D%E4%B8%8B%E8%BD%BD%E5%AF%B9%E5%BA%94%E7%89%88%E6%9C%AC%E7%9A%84tomcat%EF%BC%8C%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BBnext%EF%BC%9A"><span class="toc-number">1.2.0.5.</span> <span class="toc-text">5.点击add按钮，在弹出的界面里选择自己刚才下载对应版本的tomcat，然后点击next：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E7%84%B6%E5%90%8E%E5%9C%A8%E5%BC%B9%E5%87%BA%E7%9A%84%E7%95%8C%E9%9D%A2%E9%80%89%E6%8B%A9%E8%87%AA%E5%B7%B1%E8%A7%A3%E5%8E%8B%E7%9A%84tomcat%E7%9A%84%E7%9B%AE%E5%BD%95%EF%BC%8C%E7%82%B9%E5%87%BBfinish%EF%BC%9A"><span class="toc-number">1.2.0.6.</span> <span class="toc-text">6.然后在弹出的界面选择自己解压的tomcat的目录，点击finish：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E7%82%B9%E5%87%BB%E7%A1%AE%E5%AE%9A%E5%90%8E%E9%80%89%E6%8B%A9%E4%B8%8B%E9%9D%A2%E7%9A%84jre%EF%BC%9A"><span class="toc-number">1.2.0.7.</span> <span class="toc-text">7.点击确定后选择下面的jre：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E7%82%B9%E5%87%BBfinish%EF%BC%8C%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BBok%E6%8C%89%E9%92%AE%EF%BC%8Ctomcat%E5%B0%B1%E7%AE%97%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F%EF%BC%8C%E4%BB%A5%E5%90%8E%E8%BF%90%E8%A1%8CJava-web%E9%A1%B9%E7%9B%AE%E6%98%AF%E4%BC%9A%E5%BC%B9%E5%87%BA%E9%80%89%E6%8B%A9server%EF%BC%8C%E9%80%89%E6%8B%A9%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%AF%BC%E5%85%A5%E7%9A%84%E8%BF%99%E4%B8%AA%E5%8D%B3%E5%8F%AF%E3%80%82"><span class="toc-number">1.2.0.8.</span> <span class="toc-text">8.点击finish，然后点击ok按钮，tomcat就算配置成功，以后运行Java web项目是会弹出选择server，选择你自己导入的这个即可。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">个人联系方式:</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        eclipse如何配置tomcat
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">xieyingpengblogs</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2021-02-25T14:15:03.000Z" itemprop="datePublished">2021-02-25</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="eclipse如何安装配置tomcat"><a href="#eclipse如何安装配置tomcat" class="headerlink" title="eclipse如何安装配置tomcat"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Xieyingpeng/p/14345628.html">eclipse如何安装配置tomcat</a></h1><h2 id="一，关于tomcat的介绍"><a href="#一，关于tomcat的介绍" class="headerlink" title="一，关于tomcat的介绍"></a>一，关于tomcat的介绍</h2><ul>
+<li>Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun 和其他一些公司及个人共同开发而成。由于有了Sun 的参与和支持，最新的Servlet 和JSP 规范总是能在Tomcat 中得到体现，Tomcat 5支持最新的Servlet 2.4 和JSP 2.0 规范。因为Tomcat 技术先进、性能稳定，而且免费，因而深受Java 爱好者的喜爱并得到了部分软件开发商的认可，成为目前比较流行的Web 应用服务器。</li>
+<li>Tomcat 服务器是一个免费的开放源代码的Web 应用服务器，属于轻量级应用服务器，在中小型系统和并发访问用户不是很多的场合下被普遍使用，是开发和调试JSP 程序的首选。对于一个初学者来说，可以这样认为，当在一台机器上配置好Apache 服务器，可利用它响应HTML（标准通用标记语言下的一个应用）页面的访问请求。实际上Tomcat是Apache 服务器的扩展，但运行时它是独立运行的，所以当你运行tomcat 时，它实际上作为一个与Apache 独立的进程单独运行的。</li>
+<li>诀窍是，当配置正确时，Apache 为HTML页面服务，而Tomcat 实际上运行JSP 页面和Servlet。另外，Tomcat和IIS等Web服务器一样，具有处理HTML页面的功能，另外它还是一个Servlet和JSP容器，独立的Servlet容器是Tomcat的默认模式。不过，Tomcat处理静态HTML的能力不如Apache服务器。目前Tomcat最新版本为9.0.41。</li>
+<li>中文名汤姆猫外文名Apache Tomcat性 质Java Web服务器属 于Apache 软件基金会最新版本10.0.0-M7</li>
+</ul>
+<h2 id="二，配置步骤："><a href="#二，配置步骤：" class="headerlink" title="二，配置步骤："></a>二，配置步骤：</h2><h4 id="1-下载tomcat，从官网下载，地址：http-tomcat-apache-org-download-70-cgi"><a href="#1-下载tomcat，从官网下载，地址：http-tomcat-apache-org-download-70-cgi" class="headerlink" title="1.下载tomcat，从官网下载，地址：http://tomcat.apache.org/download-70.cgi"></a>1.下载tomcat，从官网下载，地址：<a target="_blank" rel="noopener" href="http://tomcat.apache.org/download-70.cgi">http://tomcat.apache.org/download-70.cgi</a></h4><h4 id="2-将下载下来的压缩包解压，放在自己想放的文件夹下，这个自己随意放。"><a href="#2-将下载下来的压缩包解压，放在自己想放的文件夹下，这个自己随意放。" class="headerlink" title="2.将下载下来的压缩包解压，放在自己想放的文件夹下，这个自己随意放。"></a>2.将下载下来的压缩包解压，放在自己想放的文件夹下，这个自己随意放。</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210129162703627-137507694.png" alt="img"></p>
+<h4 id="3-打开eclipse，选择window-gt-preferences："><a href="#3-打开eclipse，选择window-gt-preferences：" class="headerlink" title="3.打开eclipse，选择window-&gt;preferences："></a>3.打开eclipse，选择window-&gt;preferences：</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210129162843333-1165386797.png" alt="img"></p>
+<h4 id="4-点击server，点开后点击最下面runtime-environment："><a href="#4-点击server，点开后点击最下面runtime-environment：" class="headerlink" title="4.点击server，点开后点击最下面runtime environment："></a>4.点击server，点开后点击最下面runtime environment：</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210129162900532-288623008.png" alt="img"></p>
+<h4 id="5-点击add按钮，在弹出的界面里选择自己刚才下载对应版本的tomcat，然后点击next："><a href="#5-点击add按钮，在弹出的界面里选择自己刚才下载对应版本的tomcat，然后点击next：" class="headerlink" title="5.点击add按钮，在弹出的界面里选择自己刚才下载对应版本的tomcat，然后点击next："></a>5.点击add按钮，在弹出的界面里选择自己刚才下载对应版本的tomcat，然后点击next：</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210129162945252-738369986.png" alt="img"></p>
+<h4 id="6-然后在弹出的界面选择自己解压的tomcat的目录，点击finish："><a href="#6-然后在弹出的界面选择自己解压的tomcat的目录，点击finish：" class="headerlink" title="6.然后在弹出的界面选择自己解压的tomcat的目录，点击finish："></a>6.然后在弹出的界面选择自己解压的tomcat的目录，点击finish：</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210129163003247-1401546307.png" alt="img"></p>
+<h4 id="7-点击确定后选择下面的jre："><a href="#7-点击确定后选择下面的jre：" class="headerlink" title="7.点击确定后选择下面的jre："></a>7.点击确定后选择下面的jre：</h4><p><img src="https://img2020.cnblogs.com/blog/2171691/202101/2171691-20210129163009617-1638661458.png" alt="img"></p>
+<h4 id="8-点击finish，然后点击ok按钮，tomcat就算配置成功，以后运行Java-web项目是会弹出选择server，选择你自己导入的这个即可。"><a href="#8-点击finish，然后点击ok按钮，tomcat就算配置成功，以后运行Java-web项目是会弹出选择server，选择你自己导入的这个即可。" class="headerlink" title="8.点击finish，然后点击ok按钮，tomcat就算配置成功，以后运行Java web项目是会弹出选择server，选择你自己导入的这个即可。"></a>8.点击finish，然后点击ok按钮，tomcat就算配置成功，以后运行Java web项目是会弹出选择server，选择你自己导入的这个即可。</h4><h2 id="个人联系方式"><a href="#个人联系方式" class="headerlink" title="个人联系方式:"></a>个人联系方式:</h2><ul>
+<li>qq：2061302791</li>
+<li>微信：xie2061302791</li>
+<li>电话：15284524485</li>
+<li>个人网站：<a target="_blank" rel="noopener" href="https://xieyingpeng.mysxl.cn/">https://xieyingpeng.mysxl.cn/</a></li>
+<li>Github：<a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/">https://github.com/xieyingpeng/</a></li>
+<li>博客园：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Xieyingpengz">https://www.cnblogs.com/Xieyingpengz</a></li>
+<li>知乎：<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nan-qiao-12-73">https://www.zhihu.com/people/nan-qiao-12-73</a></li>
+<li>gitee：<a target="_blank" rel="noopener" href="https://gitee.com/xie-yingpeng/project-1.git">https://gitee.com/xie-yingpeng/project-1.git</a></li>
+<li>bilibili：<a target="_blank" rel="noopener" href="https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798">https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798</a></li>
+</ul>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#eclipse%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEtomcat"><span class="toc-number">1.</span> <span class="toc-text">eclipse如何安装配置tomcat</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%EF%BC%8C%E5%85%B3%E4%BA%8Etomcat%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">一，关于tomcat的介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%EF%BC%8C%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">二，配置步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BDtomcat%EF%BC%8C%E4%BB%8E%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%EF%BC%8C%E5%9C%B0%E5%9D%80%EF%BC%9Ahttp-tomcat-apache-org-download-70-cgi"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">1.下载tomcat，从官网下载，地址：http:&#x2F;&#x2F;tomcat.apache.org&#x2F;download-70.cgi</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B0%86%E4%B8%8B%E8%BD%BD%E4%B8%8B%E6%9D%A5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%8C%85%E8%A7%A3%E5%8E%8B%EF%BC%8C%E6%94%BE%E5%9C%A8%E8%87%AA%E5%B7%B1%E6%83%B3%E6%94%BE%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%EF%BC%8C%E8%BF%99%E4%B8%AA%E8%87%AA%E5%B7%B1%E9%9A%8F%E6%84%8F%E6%94%BE%E3%80%82"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">2.将下载下来的压缩包解压，放在自己想放的文件夹下，这个自己随意放。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%89%93%E5%BC%80eclipse%EF%BC%8C%E9%80%89%E6%8B%A9window-gt-preferences%EF%BC%9A"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">3.打开eclipse，选择window-&gt;preferences：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E7%82%B9%E5%87%BBserver%EF%BC%8C%E7%82%B9%E5%BC%80%E5%90%8E%E7%82%B9%E5%87%BB%E6%9C%80%E4%B8%8B%E9%9D%A2runtime-environment%EF%BC%9A"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">4.点击server，点开后点击最下面runtime environment：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E7%82%B9%E5%87%BBadd%E6%8C%89%E9%92%AE%EF%BC%8C%E5%9C%A8%E5%BC%B9%E5%87%BA%E7%9A%84%E7%95%8C%E9%9D%A2%E9%87%8C%E9%80%89%E6%8B%A9%E8%87%AA%E5%B7%B1%E5%88%9A%E6%89%8D%E4%B8%8B%E8%BD%BD%E5%AF%B9%E5%BA%94%E7%89%88%E6%9C%AC%E7%9A%84tomcat%EF%BC%8C%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BBnext%EF%BC%9A"><span class="toc-number">1.2.0.5.</span> <span class="toc-text">5.点击add按钮，在弹出的界面里选择自己刚才下载对应版本的tomcat，然后点击next：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E7%84%B6%E5%90%8E%E5%9C%A8%E5%BC%B9%E5%87%BA%E7%9A%84%E7%95%8C%E9%9D%A2%E9%80%89%E6%8B%A9%E8%87%AA%E5%B7%B1%E8%A7%A3%E5%8E%8B%E7%9A%84tomcat%E7%9A%84%E7%9B%AE%E5%BD%95%EF%BC%8C%E7%82%B9%E5%87%BBfinish%EF%BC%9A"><span class="toc-number">1.2.0.6.</span> <span class="toc-text">6.然后在弹出的界面选择自己解压的tomcat的目录，点击finish：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E7%82%B9%E5%87%BB%E7%A1%AE%E5%AE%9A%E5%90%8E%E9%80%89%E6%8B%A9%E4%B8%8B%E9%9D%A2%E7%9A%84jre%EF%BC%9A"><span class="toc-number">1.2.0.7.</span> <span class="toc-text">7.点击确定后选择下面的jre：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E7%82%B9%E5%87%BBfinish%EF%BC%8C%E7%84%B6%E5%90%8E%E7%82%B9%E5%87%BBok%E6%8C%89%E9%92%AE%EF%BC%8Ctomcat%E5%B0%B1%E7%AE%97%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F%EF%BC%8C%E4%BB%A5%E5%90%8E%E8%BF%90%E8%A1%8CJava-web%E9%A1%B9%E7%9B%AE%E6%98%AF%E4%BC%9A%E5%BC%B9%E5%87%BA%E9%80%89%E6%8B%A9server%EF%BC%8C%E9%80%89%E6%8B%A9%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%AF%BC%E5%85%A5%E7%9A%84%E8%BF%99%E4%B8%AA%E5%8D%B3%E5%8F%AF%E3%80%82"><span class="toc-number">1.2.0.8.</span> <span class="toc-text">8.点击finish，然后点击ok按钮，tomcat就算配置成功，以后运行Java web项目是会弹出选择server，选择你自己导入的这个即可。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">个人联系方式:</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&text=eclipse如何配置tomcat"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&title=eclipse如何配置tomcat"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&is_video=false&description=eclipse如何配置tomcat"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=eclipse如何配置tomcat&body=Check out this article: http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&title=eclipse如何配置tomcat"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&title=eclipse如何配置tomcat"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&title=eclipse如何配置tomcat"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&title=eclipse如何配置tomcat"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/02/25/eclipse%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEtomcat%E2%80%9C/&name=eclipse如何配置tomcat&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2021 лӦ��
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>
