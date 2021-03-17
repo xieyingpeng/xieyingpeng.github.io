@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止[解决方案]一，写这篇博客的用意最近学习数据库 需要安装数据库 然后在安装过程中遇到一些问题  希望新手们遇到这些问题时少花一点时间折腾 所以写这篇博客， 二.解决办法1.其中一个是：Windows无法启动MySQL57服务（位于本地计算机上）错误1067：进程意外终止，报错如下图所示。  2、紧跟着还有一个报错：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]">
+<meta property="og:url" content="http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
+<meta property="og:site_name" content="xieyingpengblogs">
+<meta property="og:description" content="本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止[解决方案]一，写这篇博客的用意最近学习数据库 需要安装数据库 然后在安装过程中遇到一些问题  希望新手们遇到这些问题时少花一点时间折腾 所以写这篇博客， 二.解决办法1.其中一个是：Windows无法启动MySQL57服务（位于本地计算机上）错误1067：进程意外终止，报错如下图所示。  2、紧跟着还有一个报错：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7QicyUba6J3ctrCKre40YQ2VKXTjicujnlwWxhVO3ia6tynSCicfT4uNrtw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7IOkbQ8XUCkoWCeLlCKicqRkr6bZrjYO9a9pu93qIZ62mNHqNkXN5kKw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7K01HTJpSIZ1L7k6OOcbpS6s7ib0r2CBNBaU9GepVeHFGjV0Gb1qBC5Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib73icaVQceIYfuxdjgjJq1uIgVSupqHEVDicLaaXWl29bVwAy7laUPLsTQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7lddovNxqPHk6njpcnkSpb7ZldLyPKI1N5SEXgpjTktn0FbAoibpDViaA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7xHgnXYt5iasHSy93piaM7jDwvWbZn1AbmKxBtsRAOCl0GictjF0JJsuTQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7kvzZgB8c6HGXWbtWyk0m9kfZKyhyLnbQfebpPaZoyNiax00d4xjna5g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib71MDhYMoP2ic7Ewp9stz4rCia7MfPZ7kibwNtzlnHaMb8IVFa2zibfbTGZw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7Kza5m99QFSbqen7ZxLiclC9eooUANyJb044Lo2Kcvp0ZY2R4hAE8KKg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7fnaBRicUZ8aHQvXl9VgQM3jokpjHcDTicibXcThytP0zoR6ibqhiaYwGTgg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://www.pianshen.com/images/908/f34c789c6e85dfb651d5728c625362e4.png">
+<meta property="og:image" content="https://www.pianshen.com/images/14/664a3390f99140a9444e2c0410768c9e.png">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7iabmhibrSJNmRKHHgUZjJM0kW0hd0o0DNMJHrREmZB5wiacJlhiaQuQcNQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib73NyfvsuNQpnic3vl3bEGMuxwqPPnOj7xEWsgia5T9AEP6qTW2PawM6OA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7ibS65UaMgBqeptwhdiaoENd0xmQ3JCfASzic4BUNmdQ49KW2uFJU63S1g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib77PUxX3OPYia0geJeuHGIJv7JBmokIicwuZiaHFvibHibE9YbNJGQrqStKKw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7uZnTYcKrbhTOg4uk1JYicZY8qQ3bYoygPwyDk59tGFwjkOUtAiaAQRqQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="article:published_time" content="2021-03-17T06:02:14.000Z">
+<meta property="article:modified_time" content="2021-03-17T06:02:37.624Z">
+<meta property="article:author" content="лӦ��">
+<meta property="article:tag" content="java html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7QicyUba6J3ctrCKre40YQ2VKXTjicujnlwWxhVO3ia6tynSCicfT4uNrtw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">xieyingpengblogs</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2021/03/17/%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E5%87%BA%E7%8E%B0-0xc0000428%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&text=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&title=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&is_video=false&description=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]&body=Check out this article: http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&title=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&title=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&title=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&title=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&name=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E6%97%B6%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.</span> <span class="toc-text">本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止[解决方案]</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%EF%BC%8C%E5%86%99%E8%BF%99%E7%AF%87%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%94%A8%E6%84%8F"><span class="toc-number">1.1.</span> <span class="toc-text">一，写这篇博客的用意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">二.解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%EF%BC%8C%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">三，联系方式</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">xieyingpengblogs</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2021-03-17T06:02:14.000Z" itemprop="datePublished">2021-03-17</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止-解决方案"><a href="#本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止-解决方案" class="headerlink" title="本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止[解决方案]"></a>本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止[解决方案]</h1><h2 id="一，写这篇博客的用意"><a href="#一，写这篇博客的用意" class="headerlink" title="一，写这篇博客的用意"></a>一，写这篇博客的用意</h2><p>最近学习数据库 需要安装数据库 然后在安装过程中遇到一些问题  希望新手们遇到这些问题时少花一点时间折腾 所以写这篇博客，</p>
+<h2 id="二-解决办法"><a href="#二-解决办法" class="headerlink" title="二.解决办法"></a>二.解决办法</h2><p>1.其中一个是：Windows无法启动MySQL57服务（位于本地计算机上）错误1067：进程意外终止，报错如下图所示。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7QicyUba6J3ctrCKre40YQ2VKXTjicujnlwWxhVO3ia6tynSCicfT4uNrtw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>2、紧跟着还有一个报错：本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止，报错如下图所示。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7IOkbQ8XUCkoWCeLlCKicqRkr6bZrjYO9a9pu93qIZ62mNHqNkXN5kKw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>3、之后即便我垂死挣扎，在命令行窗口中不断的重启MySQL服务，但是仍然没有戳到痛点，尝试的步骤有下图为证。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7K01HTJpSIZ1L7k6OOcbpS6s7ib0r2CBNBaU9GepVeHFGjV0Gb1qBC5Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>4、随后想进入MySQL， 也是报错。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib73icaVQceIYfuxdjgjJq1uIgVSupqHEVDicLaaXWl29bVwAy7laUPLsTQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>5、后来我想通过手动点击“我的电脑&gt;管理&gt;服务&gt;MySQL”，收到启动MySQL，但是也没有用。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7lddovNxqPHk6njpcnkSpb7ZldLyPKI1N5SEXgpjTktn0FbAoibpDViaA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>6、经过一番尝试之后，还是行不通。无奈之下，不断的寻找blog，终于找到了一个可行的方法，但是代价也是很大的，基本上是给MySQL洗心革面了。如果小伙伴们的原始MySQL中有重要的数据的话，不建议使用这种方法；如果觉得已经在数据库中的数据无关紧要或者不小心遇到了这个问题，那就可以大胆的使用这种方法，只不过是重头再来，具体的解决步骤如下。</p>
+<p>首先务必使用管理员权限进入到命令行、务必使用管理员权限进入到命令行、务必使用管理员权限进入到命令行，重要的事情说三遍，不然的话就会出现“发生系统错误 5。 拒绝访问。”这样的错误，如下图所示。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7xHgnXYt5iasHSy93piaM7jDwvWbZn1AbmKxBtsRAOCl0GictjF0JJsuTQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>7、之后进入到MySQL安装目录下，找到bin目录，这个过程是必须的。这个过程很简单，一路上使用cd命令和dir查看目录文件的命令相互结合，直到进入到bin目录下为止。一般来说，MySQL的安装默认路径是：C:\Program Files\MySQL\MySQL Server 5.7\bin，大家可以做下参考。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7kvzZgB8c6HGXWbtWyk0m9kfZKyhyLnbQfebpPaZoyNiax00d4xjna5g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>8、之后进行初始化data目录。如果在与bin目录同级的文件夹下没有data文件夹的话，则创建一个data空目录，名字务必为data。如果有该目录的话，记得要清空data目录下的所有初始文件，就酱紫。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib71MDhYMoP2ic7Ewp9stz4rCia7MfPZ7kibwNtzlnHaMb8IVFa2zibfbTGZw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>9、之后到bin目录下执行命令（管理员身份打开命令行窗口）：mysqld –initialize，如下图所示。初始化大概需要20秒左右的时间，静观其变即可。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7Kza5m99QFSbqen7ZxLiclC9eooUANyJb044Lo2Kcvp0ZY2R4hAE8KKg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>之后就可以看到MySQL服务顺利启动。</p>
+<p>而且在状态栏的MySQL Notifier中也会弹出提示，如下图所示，MySQL的状态变为从停止变为启动。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7fnaBRicUZ8aHQvXl9VgQM3jokpjHcDTicibXcThytP0zoR6ibqhiaYwGTgg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>10.如果按照上面步骤执行 还是报错 那我们接下来执行以下的操作</p>
+<ol>
+<li><p>修改my-default.ini文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br></pre></td><td class="code"><pre><span class="line"># For advice on how to change settings please see</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># http:&#x2F;&#x2F;dev.mysql.com&#x2F;doc&#x2F;refman&#x2F;5.7&#x2F;en&#x2F;server-configuration-defaults.html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># *** DO NOT EDIT THIS FILE. It&#39;s a template which will be copied to the</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># *** default location during install, and will be replaced if you</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># *** upgrade to a newer version of MySQL.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">default-character-set&#x3D;utf8 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Remove leading # and set to the amount of RAM for the most important data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># innodb_buffer_pool_size &#x3D; 128M</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Remove leading # to turn on a very important data integrity option: logging</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># changes to the binary log between backups.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># log_bin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># These are commonly set, remove the # and set as required.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># basedir &#x3D; .....</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># datadir &#x3D; .....</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># port &#x3D; .....</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># server_id &#x3D; .....</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 设置mysql客户端默认字符集</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#设置3306端口</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">port &#x3D; 3306 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">basedir&#x3D;D:\mysql-5.7.17-winx64</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 设置mysql数据库的数据的存放目录</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">datadir&#x3D;F:\database</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 允许最大连接数</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">max_connections&#x3D;200</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 服务端使用的字符集默认为8比特编码的latin1字符集</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">character-set-server&#x3D;utf8</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">default-storage-engine&#x3D;INNODB</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Remove leading # to set options mainly useful for reporting servers.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># The server defaults are faster for transactions and fast SELECTs.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Adjust sizes as needed, experiment to find the optimal values.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># join_buffer_size &#x3D; 128M</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># sort_buffer_size &#x3D; 2M</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># read_rnd_buffer_size &#x3D; 2M </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sql_mode&#x3D;NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>管理员cmd启动，安装mysql服务：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --install mysql</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动服务： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>报错： </p>
+</li>
+</ol>
+<p><img src="https://www.pianshen.com/images/908/f34c789c6e85dfb651d5728c625362e4.png" alt="img"></p>
+<p>查找问题，重新安装，找到问题原因，配置文件有误，还有就是未初始化mysql data文件夹。修改步骤如下：</p>
+<ol>
+<li><p>删除mysql服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --remove mysql</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件中的[mysql]  [mysqld]  ！！注意这两个括号里面的 不能少。详细的见上面的inip配置（我贴的已经是正确的了，之前我两个括号里面都写的是[mysqld]）</p>
+</li>
+<li><p>重新安装mysql服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --install mysql</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化data</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize-insecure</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动mysql服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.pianshen.com/images/14/664a3390f99140a9444e2c0410768c9e.png" alt="img"></p>
+</li>
+</ol>
+<p>11、此时通过命令行窗口再次登录数据库（命令为：mysql –u root -p）就可以顺利进入了，但是输入你之前的历史遗留的密码并不好使了，而且会报错，报错为：ERROR 1045 (28000): Access denied for user ‘root’@’localhost’ (using password: YES)，如下图所示。</p>
+<p>这是因为MySQL初始化之后，生成了一个初始密码，放在了data文件夹下以.err为后缀的文件夹下，如下图所示。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7iabmhibrSJNmRKHHgUZjJM0kW0hd0o0DNMJHrREmZB5wiacJlhiaQuQcNQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>12、此时，通过电脑自带的记事本打开文件，是不太行得通的，通过sublime text就可以顺利打开了，以“password”为搜索项，很快就定位到初始密码了，如下图所示。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib73NyfvsuNQpnic3vl3bEGMuxwqPPnOj7xEWsgia5T9AEP6qTW2PawM6OA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>这个密码是随机生成的，而且相对复杂，可以直接复杂粘贴到命令行窗口。</p>
+<p>13.但是有些打开以后发现里面密码 没有 所以不要慌 我们继续执行以下操作</p>
+<p>（1）、windows+r 打开cmd</p>
+<p>(注意：以管理员身份启动cmd窗口)</p>
+<p>（2）解决办法：</p>
+<p>（3）.先关闭Mysql服务，修改my.ini文件，再启动服务，输入命令：</p>
+<p>（4）、<code>net stop mysql     关闭命令</code><br>（5）、<code>net start mysql    启动命令</code></p>
+<p>（6）找到mysql安装路径，打开my.ini，在[mysqlId]下添加：</p>
+<p>​        <code>skip-grant-tables</code>    </p>
+<p>（7）.配置好my.ini,重启启动cmd,输入命令如下：</p>
+<p>​    <code>mysql -uroot -p</code></p>
+<p>（在输入密码时，直接点击enter跳过）</p>
+<p>如果没有出现这种情况 继续执行下面步骤：</p>
+<p>13、将初始化密码进行复制，粘贴到MySQL登录的密码中去，如下图所示。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7ibS65UaMgBqeptwhdiaoENd0xmQ3JCfASzic4BUNmdQ49KW2uFJU63S1g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>此时可以看到，顺利进入到了MySQL。</p>
+<p>14、但是直接输入MySQL的简单命令之后，发现并不能操作数据库，会提示报错：ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.，如下图所示。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib77PUxX3OPYia0geJeuHGIJv7JBmokIicwuZiaHFvibHibE9YbNJGQrqStKKw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>15、这个报错的意思是告诉你重设密码，此时只需要输入命令重新设置密码即可。至于MySQL重设密码的方法网上有很多，在这里不展开讲述了，小编用的语法是：alter user ‘root’@’localhost’ identified by ‘123456’;，其中123456是重设的密码，大家可以自定义的，顺利设置完成之后记得刷新权限：flush privileges;，尔后你就可以正常操作数据库了。该步骤的具体操作过程如下图所示。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/icjSAZybsq54l4YQFTWEjvxzD6mx9wHib7uZnTYcKrbhTOg4uk1JYicZY8qQ3bYoygPwyDk59tGFwjkOUtAiaAQRqQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p>以上就是我在安装过程中所遇见问题 折腾了好几个小时 希望对大家有帮助  当然上面有些信息来源于网上查找 ，如果有什么问题或者想交流的可以联系我</p>
+<h2 id="三，联系方式"><a href="#三，联系方式" class="headerlink" title="三，联系方式"></a>三，联系方式</h2><p>qq：2061302791</p>
+<p>微信：xie2061302791</p>
+<p>电话：15284524485</p>
+<p>个人网站：<a href="https://xieyingpeng.github.io/">https://xieyingpeng.github.io</a></p>
+<p>Github：<a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/">https://github.com/xieyingpeng/</a></p>
+<p>博客园：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Xieyingpengz">https://www.cnblogs.com/Xieyingpengz</a></p>
+<p>知乎：<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nan-qiao-12-73">https://www.zhihu.com/people/nan-qiao-12-73</a></p>
+<p>gitee：<a target="_blank" rel="noopener" href="https://gitee.com/xie-yingpeng/project-1.git">https://gitee.com/xie-yingpeng/project-1.git</a></p>
+<p>bilibili：<a target="_blank" rel="noopener" href="https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798!%5B%5D">https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798![]</a></p>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E6%97%B6%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.</span> <span class="toc-text">本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止[解决方案]</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%EF%BC%8C%E5%86%99%E8%BF%99%E7%AF%87%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%94%A8%E6%84%8F"><span class="toc-number">1.1.</span> <span class="toc-text">一，写这篇博客的用意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">二.解决办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%EF%BC%8C%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">三，联系方式</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&text=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&title=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&is_video=false&description=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]&body=Check out this article: http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&title=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&title=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&title=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&title=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/03/17/%E6%9C%AC%E5%9C%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8A%E7%9A%84MySQL%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%90%8E%E5%81%9C%E6%AD%A2%E3%80%82%E6%9F%90%E4%BA%9B%E6%9C%8D%E5%8A%A1%E5%9C%A8%E6%9C%AA%E7%94%B1%E5%85%B6%E4%BB%96%E6%9C%8D%E5%8A%A1%E6%88%96%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E5%B0%86%E8%87%AA%E5%8A%A8%E5%81%9C%E6%AD%A2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/&name=本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用将自动停止[解决方案]&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2021 лӦ��
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>
