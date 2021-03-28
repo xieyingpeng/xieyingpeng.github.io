@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="安装virtualbox时出现Installation failed! Error错误1.问题：电脑操作系统为Windows10 64位软件VirtualBox  5.2.32和VirtualBox  6.0.10都安装过，提示：但是中途弹出框提示： 安装virtualbox时安装程序出现严重错误 ￼ 2.解决方法1：在我的电脑 -&gt; 管理 -&gt; 服务和应用程序 -&gt; 服务 开启">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装virtuallbox时出现严重错误">
+<meta property="og:url" content="http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/index.html">
+<meta property="og:site_name" content="xieyingpengblogs">
+<meta property="og:description" content="安装virtualbox时出现Installation failed! Error错误1.问题：电脑操作系统为Windows10 64位软件VirtualBox  5.2.32和VirtualBox  6.0.10都安装过，提示：但是中途弹出框提示： 安装virtualbox时安装程序出现严重错误 ￼ 2.解决方法1：在我的电脑 -&gt; 管理 -&gt; 服务和应用程序 -&gt; 服务 开启">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="e:/谢应鹏的文件/照片/注册表2.png">
+<meta property="og:image" content="e:/谢应鹏的文件/照片/注册表.png">
+<meta property="og:image" content="e:/谢应鹏的文件/照片/注册表3.png">
+<meta property="article:published_time" content="2021-03-28T12:45:55.000Z">
+<meta property="article:modified_time" content="2021-03-28T12:46:32.061Z">
+<meta property="article:author" content="лӦ��">
+<meta property="article:tag" content="java html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="e:/谢应鹏的文件/照片/注册表2.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>安装virtuallbox时出现严重错误</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">xieyingpengblogs</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2021/03/22/%E6%89%A7%E8%A1%8Cpin-install-%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&text=安装virtuallbox时出现严重错误"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&title=安装virtuallbox时出现严重错误"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&is_video=false&description=安装virtuallbox时出现严重错误"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=安装virtuallbox时出现严重错误&body=Check out this article: http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&title=安装virtuallbox时出现严重错误"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&title=安装virtuallbox时出现严重错误"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&title=安装virtuallbox时出现严重错误"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&title=安装virtuallbox时出现严重错误"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&name=安装virtuallbox时出现严重错误&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85virtualbox%E6%97%B6%E5%87%BA%E7%8E%B0Installation-failed-Error%E9%94%99%E8%AF%AF"><span class="toc-number">1.</span> <span class="toc-text">安装virtualbox时出现Installation failed! Error错误</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">1.问题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%951%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">2.解决方法1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%952%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">3.解决方法2：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%953%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">4.解决方法3：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8"><span class="toc-number">1.5.</span> <span class="toc-text">5.软件下载和安装使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">1.6.</span> <span class="toc-text">6.联系方式</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        安装virtuallbox时出现严重错误
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">xieyingpengblogs</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2021-03-28T12:45:55.000Z" itemprop="datePublished">2021-03-28</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="安装virtualbox时出现Installation-failed-Error错误"><a href="#安装virtualbox时出现Installation-failed-Error错误" class="headerlink" title="安装virtualbox时出现Installation failed! Error错误"></a>安装virtualbox时出现Installation failed! Error错误</h1><h2 id="1-问题："><a href="#1-问题：" class="headerlink" title="1.问题："></a>1.问题：</h2><p>电脑操作系统为Windows10 64位<br>软件VirtualBox  5.2.32和VirtualBox  6.0.10都安装过，<br>提示：<br>但是中途弹出框提示：</p>
+<p>安装virtualbox时安装程序出现严重错误</p>
+<p>￼</p>
+<h2 id="2-解决方法1："><a href="#2-解决方法1：" class="headerlink" title="2.解决方法1："></a>2.解决方法1：</h2><p>在我的电脑 -&gt; 管理 -&gt; 服务和应用程序 -&gt; 服务 开启如下两个服务<br>（ 1），Device Install Service.<br> （2）,  Device Setup Manager.</p>
+<h2 id="3-解决方法2："><a href="#3-解决方法2：" class="headerlink" title="3.解决方法2："></a>3.解决方法2：</h2><p>当地一种方法尝试多次不生效之后，改变策略进行安装目录的修改。<br>因之前想安装在D盘的文件目录下，导致每次出现问题，后修改默认到C盘目录下，安装成功。</p>
+<p>如果方法1 2都没有安装成功试一下下面这个方法</p>
+<p><strong>安装在c盘需要权限，所以用管理员身份打开然后就安装完成了。</strong></p>
+<h2 id="4-解决方法3："><a href="#4-解决方法3：" class="headerlink" title="4.解决方法3："></a>4.解决方法3：</h2><p>如果以上方法都没有成功 </p>
+<p>那么我们需要下载一个软件Ccleaner清理注册表，因为我们安装了注册表有安装残留。Ccleaner清理注册表，我的清理完，再开启两项服务，成功安装VirtualBox。</p>
+<h2 id="5-软件下载和安装使用"><a href="#5-软件下载和安装使用" class="headerlink" title="5.软件下载和安装使用"></a>5.软件下载和安装使用</h2><p>（1）下载链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/19N6D0-8n6MAGvAnl_FOiXQ">https://pan.baidu.com/s/19N6D0-8n6MAGvAnl_FOiXQ</a><br>    提取码：32f3 </p>
+<p>（2）使用步骤：</p>
+<p>安装完成Ccleaner，双击“Ccleaner”打开该应用，在CCleaner如图界面，会检查版本更新，单击“确定”，进入下一步<br>￼<img src="E:\谢应鹏的文件\照片\注册表2.png"><br>进入“CCleaner注册”界面，不输入许可证密钥，单击“取消”进入应用<br>￼<img src="E:\谢应鹏的文件\照片\注册表.png"><br>在CCleaner应用程序主界面，第一步单击左侧“注册表”，再点击“扫描问题”，扫描完成，修复选定的问题，点击全部修复即可。</p>
+<p>￼<img src="E:\谢应鹏的文件\照片\注册表3.png"><br>扫描完，修复“全部选定”的问题即可，在开启服务安装。</p>
+<p>如果你看到了这里，觉得文章写得不错就给个赞,如果你觉得那里值得改进的，请给我留言，一定会认真查询，修正不足，谢谢！</p>
+<h2 id="6-联系方式"><a href="#6-联系方式" class="headerlink" title="6.联系方式"></a>6.联系方式</h2><p>qq：2061302791</p>
+<p>微信：xie2061302791</p>
+<p>电话：15284524485</p>
+<p>个人网站：<a href="https://xieyingpeng.github.io/">https://xieyingpeng.github.io</a></p>
+<p>Github：<a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/">https://github.com/xieyingpeng/</a></p>
+<p>博客园：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Xieyingpengz">https://www.cnblogs.com/Xieyingpengz</a></p>
+<p>知乎：<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nan-qiao-12-73">https://www.zhihu.com/people/nan-qiao-12-73</a></p>
+<p>gitee：<a target="_blank" rel="noopener" href="https://gitee.com/xie-yingpeng/project-1.git">https://gitee.com/xie-yingpeng/project-1.git</a></p>
+<p>bilibili：<a target="_blank" rel="noopener" href="https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798!%5B%5D">https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798![]</a></p>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85virtualbox%E6%97%B6%E5%87%BA%E7%8E%B0Installation-failed-Error%E9%94%99%E8%AF%AF"><span class="toc-number">1.</span> <span class="toc-text">安装virtualbox时出现Installation failed! Error错误</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">1.问题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%951%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">2.解决方法1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%952%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">3.解决方法2：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%953%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">4.解决方法3：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8"><span class="toc-number">1.5.</span> <span class="toc-text">5.软件下载和安装使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">1.6.</span> <span class="toc-text">6.联系方式</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&text=安装virtuallbox时出现严重错误"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&title=安装virtuallbox时出现严重错误"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&is_video=false&description=安装virtuallbox时出现严重错误"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=安装virtuallbox时出现严重错误&body=Check out this article: http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&title=安装virtuallbox时出现严重错误"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&title=安装virtuallbox时出现严重错误"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&title=安装virtuallbox时出现严重错误"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&title=安装virtuallbox时出现严重错误"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/&name=安装virtuallbox时出现严重错误&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2021 лӦ��
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>
