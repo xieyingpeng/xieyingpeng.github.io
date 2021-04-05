@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="1、创建HashMap变量 创建HashMap变量的格式如下图。   创建HashMap变量需指定键和值的数据类型，图中创建的变量的键是Integer类型，值是String类型。 12345678&#96;mport java.util.HashMap;&#96;  &#96;public class Hash &amp;#123;&#96;  	&#96;public static void main(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java HashMap怎么用">
+<meta property="og:url" content="http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/index.html">
+<meta property="og:site_name" content="xieyingpengblogs">
+<meta property="og:description" content="1、创建HashMap变量 创建HashMap变量的格式如下图。   创建HashMap变量需指定键和值的数据类型，图中创建的变量的键是Integer类型，值是String类型。 12345678&#96;mport java.util.HashMap;&#96;  &#96;public class Hash &amp;#123;&#96;  	&#96;public static void main(">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-05T06:45:57.000Z">
+<meta property="article:modified_time" content="2021-04-05T06:47:09.839Z">
+<meta property="article:author" content="лӦ��">
+<meta property="article:tag" content="java html">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>java HashMap怎么用</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">xieyingpengblogs</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2021/03/28/%E5%AE%89%E8%A3%85virtuallbox%E6%97%B6%E5%87%BA%E7%8E%B0%E4%B8%A5%E9%87%8D%E9%94%99%E8%AF%AF/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&text=java HashMap怎么用"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&title=java HashMap怎么用"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&is_video=false&description=java HashMap怎么用"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=java HashMap怎么用&body=Check out this article: http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&title=java HashMap怎么用"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&title=java HashMap怎么用"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&title=java HashMap怎么用"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&title=java HashMap怎么用"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&name=java HashMap怎么用&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E5%88%9B%E5%BB%BAHashMap%E5%8F%98%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text">1、创建HashMap变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%90%91HashMap%E5%8F%98%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%80%BC"><span class="toc-number">2.</span> <span class="toc-text">2、向HashMap变量添加值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E4%BB%8EHashMap%E5%8F%98%E9%87%8F%E8%8E%B7%E5%8F%96%E5%80%BC"><span class="toc-number">3.</span> <span class="toc-text">3、从HashMap变量获取值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E9%81%8D%E5%8E%86HashMap%E5%8F%98%E9%87%8F"><span class="toc-number">4.</span> <span class="toc-text">4、遍历HashMap变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81%E4%BF%AE%E6%94%B9HashMap%E5%8F%98%E9%87%8F%E4%B8%AD%E7%9A%84%E5%80%BC"><span class="toc-number">5.</span> <span class="toc-text">5、修改HashMap变量中的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81%E5%88%A0%E9%99%A4HashMap%E5%8F%98%E9%87%8F%E4%B8%AD%E7%9A%84%E5%80%BC"><span class="toc-number">6.</span> <span class="toc-text">6、删除HashMap变量中的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%E3%80%81%E7%BC%96%E5%86%99%E7%A8%8B%E5%BA%8F%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-number">7.</span> <span class="toc-text">7、编写程序测试结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%E3%80%81%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">8.</span> <span class="toc-text">8、联系方式</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        java HashMap怎么用
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">xieyingpengblogs</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2021-04-05T06:45:57.000Z" itemprop="datePublished">2021-04-05</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="1、创建HashMap变量"><a href="#1、创建HashMap变量" class="headerlink" title="1、创建HashMap变量"></a>1、创建HashMap变量</h2><ol>
+<li><p>创建HashMap变量的格式如下图。</p>
+</li>
+</ol>
+<p>创建HashMap变量需指定键和值的数据类型，图中创建的变量的键是Integer类型，值是String类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#96;mport java.util.HashMap;&#96;</span><br><span class="line"></span><br><span class="line">  &#96;public class Hash &#123;&#96;</span><br><span class="line">  	&#96;public static void main(String[] args) &#123;&#96;</span><br><span class="line">  		&#96;HashMap&lt;Integer ,String&gt; hashmap &#x3D; new HashMap&lt;&gt;();&#96;</span><br><span class="line">  	&#96;&#125;&#96;</span><br><span class="line"></span><br><span class="line">  &#96;&#125;&#96;</span><br></pre></td></tr></table></figure>
+<h2 id="2、向HashMap变量添加值"><a href="#2、向HashMap变量添加值" class="headerlink" title="2、向HashMap变量添加值"></a>2、向HashMap变量添加值</h2><ol>
+<li><p>通过HashMap的put方法可以向变量中添加值。</p>
+</li>
+</ol>
+<p>put方法有两个参数，就是要添加的数据的键和值。</p>
+<p>如图简单地通过循环向变量中添加值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;String[] name &#x3D; &#123;&quot;zahgnsna&quot;,&quot;lisi&quot;,&quot;wnagwu&quot;&#125;;&#96;</span><br><span class="line">  		&#96;for(int i &#x3D; 0 ; i &lt;name.length;i++) &#123;&#96;</span><br><span class="line">  			&#96;hashmap.put(i+1,name[i]);&#96;</span><br><span class="line">  		&#96;&#125;&#96;</span><br><span class="line">  	&#125;&#96;</span><br></pre></td></tr></table></figure>
+<h2 id="3、从HashMap变量获取值"><a href="#3、从HashMap变量获取值" class="headerlink" title="3、从HashMap变量获取值"></a>3、从HashMap变量获取值</h2><ol>
+<li><p>通过HashMap的get方法可以向变量中取值。</p>
+</li>
+</ol>
+<p>get方法需要传入一个参数，那个参数是键值，在HashMap中，键值是唯一的。如图是取键值为2时对应的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S&#96;tring names &#x3D; hashmap.get(2);&#96;System.out.println(&quot;key值为2对应的value值为：&quot;+names);</span><br></pre></td></tr></table></figure>
+<h2 id="4、遍历HashMap变量"><a href="#4、遍历HashMap变量" class="headerlink" title="4、遍历HashMap变量"></a>4、遍历HashMap变量</h2><p>遍历HashMap变量不能像遍历数组那样直接通过索引值来遍历，</p>
+<p>可以通过HashMap的keySet()方法获取变量中存放的所有键值，然后再通过遍历键获取对应的值。具体代码如图。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f&#96;or(Integer id :hashmap.keySet()) &#123;&#96;</span><br><span class="line">			&#96;System.out.println(&quot;id&quot;+id+&quot;,name:&quot;+hashmap.get(id));&#96;</span><br><span class="line">		&#96;&#125;&#96;</span><br><span class="line">		System.out.println();&#96;</span><br></pre></td></tr></table></figure>
+<p>`</p>
+<h2 id="5、修改HashMap变量中的值"><a href="#5、修改HashMap变量中的值" class="headerlink" title="5、修改HashMap变量中的值"></a>5、修改HashMap变量中的值</h2><p>在HashMap中，想修改其中存放的值，可以通过使用put方法，将原有的值覆盖。如图是通过覆盖原有键为2的值来修改变量中存放的内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#96;S&#96;ystem.out.println(&quot;修改前：id &#x3D; 2,name:&quot;+hashmap.get(2));&#96;</span><br><span class="line">		&#96;hashmap.put(2,&quot;xxx&quot;);&#96;</span><br><span class="line">		&#96;System.out.println(&quot;修改后：id &#x3D; 2,name:&quot;+hashmap.get(2));&#96;</span><br><span class="line">		System.out.println();&#96;</span><br></pre></td></tr></table></figure>
+<h2 id="6、删除HashMap变量中的值"><a href="#6、删除HashMap变量中的值" class="headerlink" title="6、删除HashMap变量中的值"></a>6、删除HashMap变量中的值</h2><p>由于键值是对应的，所以只有删除HashMap中的键，就会连同删除键对应的值。通过使用HashMap的remove方法，可以删除HashMap变量中的内容。</p>
+<p>这里讲一下remove方法的两个重载函数，remove(Object key) 和 remove(Object key, Object value)。这两个函数的区别在于，remove(Object key)直接删除对应的键，而remove(Object key, Object value)需要键和值都对应时才会删除HashMap变量中的内容。(具体效果看后面步骤)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#96;S&#96;ystem.out.println(&quot;删除前：&quot;);&#96;</span><br><span class="line">		&#96;for(Integer id :hashmap.keySet()) &#123;&#96;</span><br><span class="line">			&#96;System.out.println(&quot;id:&quot;+id+&quot;,name:&quot;+hashmap.get(id));&#96;</span><br><span class="line">		&#96;&#125;&#96;</span><br><span class="line">		&#96;System.out.println(&quot;删除后：&quot;);&#96;</span><br><span class="line">		&#96;hashmap.remove(2);&#96;</span><br><span class="line">		&#96;for(Integer id :hashmap.keySet()) &#123;&#96;</span><br><span class="line">			&#96;System.out.println(&quot;id:&quot;+id+&quot;name:&quot;+hashmap.get(id));&#96;</span><br><span class="line">		&#96;&#125;&#96;</span><br><span class="line">		System.out.println();&#96;</span><br></pre></td></tr></table></figure>
+<h2 id="7、编写程序测试结果"><a href="#7、编写程序测试结果" class="headerlink" title="7、编写程序测试结果"></a>7、编写程序测试结果</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#96;import java.util.HashMap;&#96;</span><br><span class="line"></span><br><span class="line">&#96;public class Hash &#123;&#96;</span><br><span class="line">	&#96;public static void main(String[] args) &#123;&#96;</span><br><span class="line">		&#96;HashMap&lt;Integer ,String&gt; hashmap &#x3D; new HashMap&lt;&gt;();&#96;</span><br><span class="line">		&#96;String[] name &#x3D; &#123;&quot;zahgnsna&quot;,&quot;lisi&quot;,&quot;wnagwu&quot;&#125;;&#96;</span><br><span class="line">		&#96;for(int i &#x3D; 0 ; i &lt;name.length;i++) &#123;&#96;</span><br><span class="line">			&#96;hashmap.put(i+1,name[i]);&#96;</span><br><span class="line">		&#96;&#125;&#96;</span><br><span class="line">		&#96;String names &#x3D; hashmap.get(2);&#96;</span><br><span class="line">		&#96;System.out.println(&quot;key值为2对应的value值为：&quot;+names);&#96;</span><br><span class="line">		&#96;for(Integer id :hashmap.keySet()) &#123;&#96;</span><br><span class="line">			&#96;System.out.println(&quot;id&quot;+id+&quot;,name:&quot;+hashmap.get(id));&#96;</span><br><span class="line">		&#96;&#125;&#96;</span><br><span class="line">		&#96;System.out.println();&#96;</span><br><span class="line">		&#96;System.out.println(&quot;修改前：id &#x3D; 2,name:&quot;+hashmap.get(2));&#96;</span><br><span class="line">		&#96;hashmap.put(2,&quot;xxx&quot;);&#96;</span><br><span class="line">		&#96;System.out.println(&quot;修改后：id &#x3D; 2,name:&quot;+hashmap.get(2));&#96;</span><br><span class="line">		&#96;System.out.println();&#96;</span><br><span class="line">		&#96;System.out.println(&quot;删除前：&quot;);&#96;</span><br><span class="line">		&#96;for(Integer id :hashmap.keySet()) &#123;&#96;</span><br><span class="line">			&#96;System.out.println(&quot;id:&quot;+id+&quot;,name:&quot;+hashmap.get(id));&#96;</span><br><span class="line">		&#96;&#125;&#96;</span><br><span class="line">		&#96;System.out.println(&quot;删除后：&quot;);&#96;</span><br><span class="line">		&#96;hashmap.remove(2);&#96;</span><br><span class="line">		&#96;for(Integer id :hashmap.keySet()) &#123;&#96;</span><br><span class="line">			&#96;System.out.println(&quot;id:&quot;+id+&quot;name:&quot;+hashmap.get(id));&#96;</span><br><span class="line">		&#96;&#125;&#96;</span><br><span class="line">		&#96;System.out.println();&#96;</span><br><span class="line">	&#96;&#125;&#96;</span><br><span class="line">&#96;&#96;	</span><br><span class="line"></span><br><span class="line">&#96;&#125;&#96;</span><br></pre></td></tr></table></figure>
+<h2 id="8、联系方式"><a href="#8、联系方式" class="headerlink" title="8、联系方式"></a>8、联系方式</h2><p>qq：2061302791</p>
+<p>微信：xie2061302791</p>
+<p>电话：15284524485</p>
+<p>个人网站：<a href="https://xieyingpeng.github.io/">https://xieyingpeng.github.io</a></p>
+<p>Github：<a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/">https://github.com/xieyingpeng/</a></p>
+<p>博客园：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Xieyingpengz">https://www.cnblogs.com/Xieyingpengz</a></p>
+<p>知乎：<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nan-qiao-12-73">https://www.zhihu.com/people/nan-qiao-12-73</a></p>
+<p>gitee：<a target="_blank" rel="noopener" href="https://gitee.com/xie-yingpeng/project-1.git">https://gitee.com/xie-yingpeng/project-1.git</a></p>
+<p>bilibili：<a target="_blank" rel="noopener" href="https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798!%5B%5D">https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798![]</a></p>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E5%88%9B%E5%BB%BAHashMap%E5%8F%98%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text">1、创建HashMap变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%90%91HashMap%E5%8F%98%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%80%BC"><span class="toc-number">2.</span> <span class="toc-text">2、向HashMap变量添加值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E4%BB%8EHashMap%E5%8F%98%E9%87%8F%E8%8E%B7%E5%8F%96%E5%80%BC"><span class="toc-number">3.</span> <span class="toc-text">3、从HashMap变量获取值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E9%81%8D%E5%8E%86HashMap%E5%8F%98%E9%87%8F"><span class="toc-number">4.</span> <span class="toc-text">4、遍历HashMap变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81%E4%BF%AE%E6%94%B9HashMap%E5%8F%98%E9%87%8F%E4%B8%AD%E7%9A%84%E5%80%BC"><span class="toc-number">5.</span> <span class="toc-text">5、修改HashMap变量中的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81%E5%88%A0%E9%99%A4HashMap%E5%8F%98%E9%87%8F%E4%B8%AD%E7%9A%84%E5%80%BC"><span class="toc-number">6.</span> <span class="toc-text">6、删除HashMap变量中的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%E3%80%81%E7%BC%96%E5%86%99%E7%A8%8B%E5%BA%8F%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-number">7.</span> <span class="toc-text">7、编写程序测试结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%E3%80%81%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">8.</span> <span class="toc-text">8、联系方式</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&text=java HashMap怎么用"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&title=java HashMap怎么用"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&is_video=false&description=java HashMap怎么用"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=java HashMap怎么用&body=Check out this article: http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&title=java HashMap怎么用"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&title=java HashMap怎么用"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&title=java HashMap怎么用"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&title=java HashMap怎么用"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/04/05/java-HashMap%E6%80%8E%E4%B9%88%E7%94%A8/&name=java HashMap怎么用&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2021 лӦ��
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>
