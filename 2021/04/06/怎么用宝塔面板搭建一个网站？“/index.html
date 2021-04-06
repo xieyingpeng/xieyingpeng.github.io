@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="怎么用宝塔面板搭建一个网站？1.工具&#x2F;原料 安装完宝塔面板和运行环境的服务器 一个网站所需的域名 网站源码（可有可无）  ①在宝塔面板中配置站点 1  登陆到宝塔面板的Web面板    2  进入后，点击左侧的“网站”按钮。    3  接着，点击“添加站点”按钮，进行网站的添加     在弹出的窗口中，填写配置站点，填写好域名、站点目录等信息。填写完成后，点击“提交”，完成网站的创建。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="怎么用宝塔面板搭建一个网站？">
+<meta property="og:url" content="http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/index.html">
+<meta property="og:site_name" content="xieyingpengblogs">
+<meta property="og:description" content="怎么用宝塔面板搭建一个网站？1.工具&#x2F;原料 安装完宝塔面板和运行环境的服务器 一个网站所需的域名 网站源码（可有可无）  ①在宝塔面板中配置站点 1  登陆到宝塔面板的Web面板    2  进入后，点击左侧的“网站”按钮。    3  接着，点击“添加站点”按钮，进行网站的添加     在弹出的窗口中，填写配置站点，填写好域名、站点目录等信息。填写完成后，点击“提交”，完成网站的创建。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210406144719504.png">
+<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210406144838922.png">
+<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210406144918853.png">
+<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210406145008757.png">
+<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210406145245675.png">
+<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210406145315923.png">
+<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210406145423574.png">
+<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210406145628855.png">
+<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210406145852498.png">
+<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210406145914603.png">
+<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210406150938506.png">
+<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210406151256855.png">
+<meta property="og:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210406151346284.png">
+<meta property="article:published_time" content="2021-04-06T07:46:43.000Z">
+<meta property="article:modified_time" content="2021-04-06T07:47:15.796Z">
+<meta property="article:author" content="лӦ��">
+<meta property="article:tag" content="java html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/ASUS/AppData/Roaming/Typora/typora-user-images/image-20210406144719504.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>怎么用宝塔面板搭建一个网站？</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">xieyingpengblogs</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2021/04/05/Win10%E5%90%AF%E5%8A%A8%E4%BF%AE%E5%A4%8D%E6%97%A0%E6%B3%95%E4%BF%AE%E5%A4%8D%E4%BD%A0%E7%9A%84%E7%94%B5%E8%84%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&text=怎么用宝塔面板搭建一个网站？"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&title=怎么用宝塔面板搭建一个网站？"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&is_video=false&description=怎么用宝塔面板搭建一个网站？"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=怎么用宝塔面板搭建一个网站？&body=Check out this article: http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&title=怎么用宝塔面板搭建一个网站？"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&title=怎么用宝塔面板搭建一个网站？"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&title=怎么用宝塔面板搭建一个网站？"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&title=怎么用宝塔面板搭建一个网站？"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&name=怎么用宝塔面板搭建一个网站？&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">怎么用宝塔面板搭建一个网站？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B7%A5%E5%85%B7-%E5%8E%9F%E6%96%99"><span class="toc-number">1.1.</span> <span class="toc-text">1.工具&#x2F;原料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A0%E5%9C%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E4%B8%AD%E9%85%8D%E7%BD%AE%E7%AB%99%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">①在宝塔面板中配置站点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A3%E4%B8%8A%E4%BC%A0%E7%BD%91%E7%AB%99%E6%BA%90%E7%A0%81"><span class="toc-number">1.3.</span> <span class="toc-text">④上传网站源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.4.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">1.5.</span> <span class="toc-text">3联系方式</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        怎么用宝塔面板搭建一个网站？
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">xieyingpengblogs</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2021-04-06T07:46:43.000Z" itemprop="datePublished">2021-04-06</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="怎么用宝塔面板搭建一个网站？"><a href="#怎么用宝塔面板搭建一个网站？" class="headerlink" title="怎么用宝塔面板搭建一个网站？"></a>怎么用宝塔面板搭建一个网站？</h1><h2 id="1-工具-原料"><a href="#1-工具-原料" class="headerlink" title="1.工具/原料"></a>1.工具/原料</h2><ul>
+<li>安装完宝塔面板和运行环境的服务器</li>
+<li>一个网站所需的域名</li>
+<li>网站源码（可有可无）</li>
+</ul>
+<h2 id="①在宝塔面板中配置站点"><a href="#①在宝塔面板中配置站点" class="headerlink" title="①在宝塔面板中配置站点"></a>①在宝塔面板中配置站点</h2><ol>
+<li><p>1</p>
+<p> 登陆到宝塔面板的Web面板</p>
+<p> <img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210406144719504.png" alt="image-20210406144719504"></p>
+</li>
+<li><p>2</p>
+<p> 进入后，点击左侧的“网站”按钮。</p>
+<p> <img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210406144838922.png" alt="image-20210406144838922"></p>
+</li>
+<li><p>3</p>
+<p> 接着，点击“添加站点”按钮，进行网站的添加</p>
+<p> <img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210406144918853.png" alt="image-20210406144918853"></p>
+</li>
+<li><p> 在弹出的窗口中，填写配置站点，填写好域名、站点目录等信息。填写完成后，点击“提交”，完成网站的创建。</p>
+<p> <img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210406145008757.png" alt="image-20210406145008757"></p>
+</li>
+</ol>
+<h2 id="④上传网站源码"><a href="#④上传网站源码" class="headerlink" title="④上传网站源码"></a>④上传网站源码</h2><ol>
+<li><p> 打开宝塔面板，进入网站菜单，点击网站的根目录 然后点击上传 最后选择源代码所在路径就行。</p>
+<p> <img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210406145245675.png" alt="image-20210406145245675"></p>
+<p> <img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210406145315923.png" alt="image-20210406145315923"></p>
+</li>
+<li><p> 点击左上角的“上传”按钮。进入上传页面后，点击“选择文件”按钮，进行选择文件。</p>
+<p> <img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210406145423574.png" alt="image-20210406145423574"></p>
+</li>
+<li><p> 这里，我已经上传了准备好的源码。选择好后，点击上传按钮，就上传到服务器上了。</p>
+<p> <img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210406145628855.png" alt="image-20210406145628855"></p>
+</li>
+<li><p> 在浏览器输入你上面创建的域名  我的就是<a target="_blank" rel="noopener" href="http://www.wo.com/">http://www.wo.com</a> 然后刷新网站，网站成功更新了！</p>
+<p> <img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210406145852498.png" alt="image-20210406145852498"></p>
+<p> <img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210406145914603.png" alt="image-20210406145914603"></p>
+</li>
+</ol>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>1.在创建网站前，必须安装好网站的运行服务！</p>
+<p>2.如果我们搭配好了上面这些步骤  但是用域名去访问的时候  发现访问失败 打不开  这时我们需要把这个地址手动添加到</p>
+<p>C:\Windows\System32\drivers\etc下的hosts中  我们需要用vim编辑器打开 如果没有的下载一个 </p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210406150938506.png" alt="image-20210406150938506"></p>
+<p>在终端中用vim打开hosts文件</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210406151256855.png" alt="image-20210406151256855"></p>
+<p>打开之后是这样的 我已经添加在里面了 你们根据自己的域名进行添加</p>
+<p><img src="C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\image-20210406151346284.png" alt="image-20210406151346284"></p>
+<p>3.对vim编辑器使用的一些知识</p>
+<p>（1）vim+文件名 打开某文件</p>
+<p>(2)按小写 i 进入插入模式</p>
+<p>(3)按小写a进入编辑模式</p>
+<p>(4)输入(先按ESC) 然后输入    ：q   退出 但是不保存</p>
+<p>(5)输入(先按ESC) 然后输入  :w     保存但是不退出</p>
+<p>(6) 输入(先按ESC) 然后输入   :wq  保存并退出</p>
+<p>（7） 前面加！ 表示强制执行意思  比如 :!q 强制退出</p>
+<h2 id="3联系方式"><a href="#3联系方式" class="headerlink" title="3联系方式"></a>3联系方式</h2><p>qq：2061302791</p>
+<p>微信：xie2061302791</p>
+<p>电话：15284524485</p>
+<p>个人网站：<a target="_blank" rel="noopener" href="https://xieyingpeng.mysxl.cn/">https://xieyingpeng.mysxl.cn/</a></p>
+<p>Github：<a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/">https://github.com/xieyingpeng/</a></p>
+<p>博客园：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Xieyingpengz">https://www.cnblogs.com/Xieyingpengz</a></p>
+<p>知乎：<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/nan-qiao-12-73">https://www.zhihu.com/people/nan-qiao-12-73</a></p>
+<p>gitee：<a target="_blank" rel="noopener" href="https://gitee.com/xie-yingpeng/project-1.git">https://gitee.com/xie-yingpeng/project-1.git</a></p>
+<p>bilibili：<a target="_blank" rel="noopener" href="https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798">https://space.bilibili.com/617198338?share_medium=android&amp;share_source=copy_link&amp;bbid=XY2BDF522C748A159BE7DD354D6DFFB963728&amp;ts=1612520115798</a></p>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">怎么用宝塔面板搭建一个网站？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B7%A5%E5%85%B7-%E5%8E%9F%E6%96%99"><span class="toc-number">1.1.</span> <span class="toc-text">1.工具&#x2F;原料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A0%E5%9C%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E4%B8%AD%E9%85%8D%E7%BD%AE%E7%AB%99%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">①在宝塔面板中配置站点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A3%E4%B8%8A%E4%BC%A0%E7%BD%91%E7%AB%99%E6%BA%90%E7%A0%81"><span class="toc-number">1.3.</span> <span class="toc-text">④上传网站源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.4.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-number">1.5.</span> <span class="toc-text">3联系方式</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&text=怎么用宝塔面板搭建一个网站？"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&title=怎么用宝塔面板搭建一个网站？"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&is_video=false&description=怎么用宝塔面板搭建一个网站？"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=怎么用宝塔面板搭建一个网站？&body=Check out this article: http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&title=怎么用宝塔面板搭建一个网站？"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&title=怎么用宝塔面板搭建一个网站？"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&title=怎么用宝塔面板搭建一个网站？"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&title=怎么用宝塔面板搭建一个网站？"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://xieyingpeng.github.io/2021/04/06/%E6%80%8E%E4%B9%88%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%EF%BC%9F%E2%80%9C/&name=怎么用宝塔面板搭建一个网站？&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2021 лӦ��
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="https://github.com/xieyingpeng/solar-theme-hexo">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>
